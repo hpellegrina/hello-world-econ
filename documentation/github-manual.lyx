@@ -122,13 +122,13 @@ theorems-std
 \begin_layout Title
 A Brief Introduction to GitHub for Social Scientists using Stata and Dropbox
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 This document should not be considered as representative of high standards
- of project management, but I hope that this material can be useful for
- Social Scientists like me struggled to understand the material that I could
- find on the internet.
+ of project management! I hope that this material can be useful for Social
+ Scientists like me who struggled with the material that is available for
+ social scientists on the internet.
  In particular, I could not find a specific document that addressed the
  integration of Dropbox with GitHub when a project uses larger datasets.
  Comments are very welcome!
