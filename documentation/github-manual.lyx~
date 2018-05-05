@@ -127,7 +127,10 @@ status open
 \begin_layout Plain Layout
 This document should not be considered as representative of high standards
  of project management! I hope that this material can be useful for Social
- Scientists who are interested in using GitHub with Dropbox.
+ Scientists like me who struggled with the material that is available for
+ social scientists on the internet.
+ In particular, I could not find a specific document that addressed the
+ integration of Dropbox with GitHub when a project uses larger datasets.
  Comments are very welcome!
 \end_layout
 
