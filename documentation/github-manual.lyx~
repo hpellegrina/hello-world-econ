@@ -122,16 +122,27 @@ theorems-std
 \begin_layout Title
 A Brief Introduction to GitHub for Social Scientists using Stata and Dropbox
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
-This document should not be considered as representative of high standards
- of project management! I hope that this material can be useful for Social
- Scientists like me who struggled with the material that is available for
- social scientists on the internet.
- In particular, I could not find a specific document that addressed the
- integration of Dropbox with GitHub when a project uses larger datasets.
- Comments are very welcome!
+The purpose of this material is to serve just as an introduction to Github
+ for Social Scientists.
+ I hope that this material can be useful for Social Scientists in general
+ who are trying to integrate Github with Dropbox for the first time.
+ This document should not be considered as representative of high standards
+ of project management! For an advanced template for project management,
+ see the material that Pr.
+ Jesse Shapiro shared in his Github (
+\begin_inset CommandInset href
+LatexCommand href
+name "click here"
+target "https://github.com/gslab-econ/template"
+literal "false"
+
+\end_inset
+
+).
+ 
 \end_layout
 
 \end_inset
@@ -149,17 +160,17 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-Github is widely used online platform that computer scientists use to keep
- track of their codes and to collaborate in projects.
- It is useful to understand the difference between Git from GitHub.
+GitHub is widely used online platform that computer scientists use to keep
+ track of their codes and to collaborate in their projects.
+ The word GitHub is the combination of Git with Hub.
  Git is a version control system that stores all the history of a code.
- With Git, programmers can check what they changed in a code, when, and
- they can go back to previous versions of their project if they do not like
- the results of some changes that they made.
- Github is a web-based repository that keeps all the history of a code on
+ With Git, programmers can check what they changed their codes, when they
+ changed their codes, and they can also go back to previous versions of
+ their projects if they do not like the changes that they made.
+ GitHub is a web-based repository that keeps all the history of a code on
  a cloud using the Git system.
- Since everything is in a cloud, it allows many people to colaborate in
- the formulation of a code.
+ Since everything is in a cloud, it allows many researchers to colaborate
+ in a project.
 \end_layout
 
 \begin_layout Subsection
@@ -168,13 +179,13 @@ Why Should I use GitHub+Dropbox instead of just using Dropbox?
 
 \begin_layout Standard
 \noindent
-Dropbox is a great resource for teamwork in smaller projects.
- Many people work on a project and everything is automatically syncronized
- across computers.
+Dropbox is a great resource for teamwork.
+ It allows many people to work on the same project and everything is automatical
+ly syncronized across computers.
  However, as projects multiply, become larger and gain many collaborators,
- there are several problems.
+ one may run into problems.
  First, if you have worked with Dropbox with many collaborators you probably
- noticed the typical generation of 
+ noticed the generation of 
 \begin_inset Quotes eld
 \end_inset
 
@@ -183,16 +194,16 @@ conflict
 \end_inset
 
  copies.
- This happens when Dropbox is not sure which version to use because there
- was more than one sincronization at the same time.
+ This happens when Dropbox is not sure which version it should use because
+ there is more than one sincronization happening at the same time.
  As I explain below, GitHub tends to avoid this problem because files are
  not automatically sincronized.
- Second, Dropbox does not have a good system to track codes.
+ Second, Dropbox lacks a more sophisticated system to track what changed
+ in each version of a code.
  If something changes, we do not know who changed a code and what exactly
  changed.
- GitHub has an interface that makes it easy to identify where exactly codes
- changed.
- Third, if you want to bring back previous versions of the project, GitHub
+ GitHub has an interface that makes it easy to identify these changes.
+ Third, if you want to bring back previous versions of a project, GitHub
  can do it quickly, but with Dropbox, we can only bring back specific files
  one at a time.
  While some of these problems may be more likely to appear in large projects
@@ -202,7 +213,6 @@ conflict
  The main cost of using GitHub is that you have to be much more systematic
  about the way how you work since you have to manually sincronize your changes
  with the cloud.
- 
 \end_layout
 
 \begin_layout Subsection
@@ -210,8 +220,8 @@ What is the Difference between Dropbox and GitHub?
 \end_layout
 
 \begin_layout Standard
-In practice, the main difference between Dropbox and GitHub is that now
- we have an intermediary step for the syncronization of files called
+For me, the main difference between Dropbox and GitHub is that now we have
+ an intermediary step for the syncronization of files called
 \emph on
  
 \begin_inset Quotes eld
@@ -232,10 +242,15 @@ commit
 
 \end_inset
 
-where Master Repository is the cloud where the codes and their history is
- maintained and local repository is a copy of the Master Repository that
- you keep in your computer.
- In Git, we have
+where Master Repository is the cloud where the codes are and local repository
+ is a copy of the Master Repository that you keep in your computer.
+ If someone changes something in their Local Repository, things are automaticall
+y sincronized with the Master Repository and across all the Local Repositories
+ of other researchers working on the project.
+ Therefore, if someone makes a mistake, this mistake spreads across the
+ project and there is no straighforward way of identifying this mistake
+ and going back to previous versions of the project.
+ Now, with Git, we have an intermediary step
 \end_layout
 
 \begin_layout Standard
@@ -274,9 +289,21 @@ Pull
 
 \emph default
  if you are just updating the project to your local repo.
- Both are essentially downloading the files from the internet.
+ Both are essentially downloading the files from the cloud.
  After you make your changes to the files, you can upload them to this intermedi
-ary step called commit.
+ary step called commit using a process called
+\emph on
+ 
+\begin_inset Quotes eld
+\end_inset
+
+add
+\begin_inset Quotes erd
+\end_inset
+
+
+\emph default
+.
  You can upload these changes to the cloud using a process called 
 \begin_inset Quotes eld
 \end_inset
@@ -290,6 +317,9 @@ Push
 \end_inset
 
 .
+ GitHub keeps track of all the versions of the project.
+ If someone makes a mistake, we can easily go back to the version of the
+ project that existed before the mistake.
 \end_layout
 
 \begin_layout Subsection
@@ -300,15 +330,14 @@ Can I use GitHub as a Repository for my Datasets?
 GitHub is a tool for keeping track of codes, but it is not supposed to be
  a repository for datasets.
  This is where an integration of Dropbox with Github is useful.
- GitHub can keep track of all the codes that is written in a project, but
- not the datasets and output of the project (figures, tables and pdfs).
+ GitHub can keep track of all the codes that are written for a project,
+ and we can leave the datasets and output of the project (figures, tables
+ and pdfs) untracked.
  For example, a researcher can keep track of do-files that clean the data,
- keeping all the versions of the code, but only keep the final version of
- the cleaned dataset and not its history.
+ but only keep the final version of the cleaned dataset.
  The idea is that, by keeping track of the code, we can always go back to
- previous versions of the project and re-clean previous datasets if the
- project is well organized.
- 
+ previous versions of the project and re-obtain previous versions of the
+ cleaned dataset.
 \end_layout
 
 \begin_layout Subsection
@@ -337,8 +366,7 @@ Commands for Terminal
 
 \begin_layout Standard
 There are two ways to sincronize your files with the master repository.
- First, you can with the Master repository using a software called GitHub
- Desktop.
+ First, you can use a software called GitHub Desktop.
  This is a software where you can 
 \begin_inset Quotes eld
 \end_inset
@@ -348,9 +376,7 @@ point-and-click
 \end_inset
 
  your way through sincronization.
- I found this quite user friendly.
- However, there were a couple of functionalities that I was not able to
- obtain with it.
+ I found this software quite user friendly.
  Second, you can use the Terminal in Mac
 \begin_inset Foot
 status collapsed
@@ -371,20 +397,26 @@ literal "false"
 
 \end_inset
 
- or the command line in windows.
+ (or the command line in windows).
  They may seem scary at first.
- But, in practice, you do not have to be anythin near a sophisticated programmer
- to use it.
+ But, in practice, you do not have to be a sophisticated programmer to use
+ it.
  There are just a few commands that you have to memorize for your daily
  work (or just use the list below).
- 
+ I see two main benefits in learning how to actually type the commands in
+ Terminal.
+ First, whenever you want to do something specific and you google about
+ it, the answers that you get are mostly based on command lines.
+ Therefore, to understand the answers that the community will give you,
+ you need to have a basic understanding of the language that they are using.
+ Second, there are some functionalities that I was not able to obtain with
+ the graphical interface.
 \end_layout
 
-\begin_layout Itemize
-MAC
+\begin_layout Subsection
+Basic commands (MAC)
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 
 \emph on
@@ -521,9 +553,8 @@ git pull
 (this command will pull any changes that you made to the git cloud)
 \end_layout
 
-\end_deeper
-\begin_layout Standard
-How a day of work on a task may look like.
+\begin_layout Subsection
+How a typical day of work looks like?
 \end_layout
 
 \begin_layout Itemize
@@ -565,7 +596,7 @@ Issue 7: added table_1_summary_stat.do
 \begin_layout Itemize
 You type 
 \emph on
-git pull
+git push
 \emph default
 .
 \end_layout
@@ -575,18 +606,17 @@ Hello-World! I'm an Economist!
 \end_layout
 
 \begin_layout Standard
-Following the tradition in the computer science.
+Following the tradition in computer science.
  Below you will have your first commit using GitHub, Stata and Dropbox.
- I taylored this commit to include some of the tricks that I have been using
- to integrate Dropbox with GitHub.
+ I taylored this commit to include some of the tricks to integrate Dropbox
+ with GitHub.
  
 \end_layout
 
 \begin_layout Enumerate
 Before you start, make sure that you have a GitHub account and that you
  have installed Git into your machine.
- To double check if it's properly installed, go to terminal in MAC and type
- 
+ To double check if it is properly installed, go to terminal and type 
 \begin_inset Quotes eld
 \end_inset
 
@@ -595,8 +625,8 @@ git
 \end_inset
 
 .
- If it is installed, it will show a list of commands that you can use with
- git.
+ If it is already installed, it will show a list of commands that you can
+ use.
 \end_layout
 
 \begin_layout Enumerate
@@ -604,24 +634,24 @@ Create a repository called
 \begin_inset Quotes eld
 \end_inset
 
-projects-my-hello-world-econ-git
+projects-my-hello-world-econ
 \begin_inset Quotes erd
 \end_inset
 
-.
+ using the website.
 \end_layout
 
 \begin_layout Enumerate
-Create a folder in Dropbox or GoogleDrive and call it 
+Create a folder in Dropbox or GoogleDrive called 
 \begin_inset Quotes eld
 \end_inset
 
-projects-hello-world-econ-data-repo
+projects-my-hello-world-data-repo
 \begin_inset Quotes erd
 \end_inset
 
 .
- Put the data called 
+ Manually put 
 \begin_inset Quotes eld
 \end_inset
 
@@ -637,7 +667,7 @@ datastorage-for-practice
 \begin_inset Quotes erd
 \end_inset
 
- into the folder that you just created.
+ into this folder.
 \begin_inset Foot
 status collapsed
 
@@ -661,8 +691,22 @@ git
 \end_layout
 
 \begin_layout Enumerate
-Open the terminal and go to the Dropbox folder that you have using the commands
- 
+Open the terminal.
+ Connect your computer to your online account using by typing 
+\emph on
+git config –global user.email 
+\begin_inset Quotes eld
+\end_inset
+
+email@example.com
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Go to your Dropbox folder in the terminal using the commands 
 \emph on
 cd 
 \emph default
@@ -671,21 +715,27 @@ and
 ls
 \emph default
 .
- In the Dropbox folder, type 
-\emph on
-git clone https://github.com/hpellegrina/projects-hello-world-econ
-\emph default
- .
- This will clone my folder to your computer.
  
 \end_layout
 
 \begin_layout Enumerate
 Type 
 \emph on
-git clone projects-my-hello-world-econ-git 
+git clone https://github.com/hpellegrina/projects-hello-world-econ
 \emph default
-(this is where you are going to commit the project based on my clone).
+ .
+ This makes a copy of my repository into your computer.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Type
+\emph on
+ git clone projects-my-hello-world-econ-git.
+ 
+\emph default
+This makes a copy of the repository where you are going to commit the project
+ based on mine.
 \end_layout
 
 \begin_layout Enumerate
@@ -704,13 +754,17 @@ fake
 \end_inset
 
  link to the Dropbox folder.
- In my case, I typed 
+ To do so, type 
 \emph on
-ln -s /Users/heitorpellegrina/ Dropbox/ projects-my-hello-world-econ-data-repo
- /Users/heitorpellegrina/ Dropbox/projects-my-hello-world-econ/datastorage
+ln -s /Users/putyournamehere/ Dropbox/ projects-my-hello-world-econ-data-repo
+ /Users/puyournamehere/ Dropbox/projects-my-hello-world-econ/datastorage
 \emph default
 .
- For PC users, you have to type 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+For PC users, you have to type 
 \emph on
 mklink /J datastore "C:
 \backslash
@@ -723,21 +777,27 @@ Users
 projects-my-hello-world-econ-data-repo" 
 \end_layout
 
-\begin_layout Enumerate
-Outside terminal, copy all the documents from my project into your own folder.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Enumerate
-Now, run the stata do-file from your folder and create the new figure.
+Manually copy all the documents from my project into your folder.
+\end_layout
+
+\begin_layout Enumerate
+Run the stata do-file from your folder and create the new figure.
  You may have to change the location of the directory inside the .do file.
 \end_layout
 
 \begin_layout Enumerate
-Now, it's time to commit your changes.
- Go back to terminal and type 
+Go back to terminal and type 
 \emph on
 git add -A.
  
+\emph default
+With this command we add our changes to the commit.
 \end_layout
 
 \begin_layout Enumerate
@@ -745,7 +805,7 @@ Type
 \emph on
 git status
 \emph default
-, check if everything that you changed is actually there.
+, check if everything that you changed is actually there for you to commit.
  
 \end_layout
 

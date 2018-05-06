@@ -1,8 +1,12 @@
 # projects-hello-world-econ
-This is a Hello World for economists using Stata and Dropbox (or GoogleDrive)! This is just a simple exercise that I created to share with people the way how I organize my projects. You will learn the basics of GitHub: how to download a repository from the internet, how to integrate this repository with Dropbox, and how to upload this repository that you created to the "cloud" of github after creating a simple figure. 
+This is a Hello World for economists using Stata and Dropbox (or GoogleDrive)! Here, we will walk through the basics of GitHub: how to download a repository from the internet, how to integrate your repository with Dropbox, and how to upload the changes that you made to your repository to the "cloud" of GitHub.
 
-Importantly, this document should not be considered as representative of high standards of project management! I hope that this material can be useful for Social Scientists in general who are trying to integrate Github with Dropbox.
+Importantly, the purpose of this material is to serve just as an introduction to Github for Social Scientists. I hope that this material can be useful for Social Scientists who are not familiar with the language of computer scientistis and who are trying to integrate Github with Dropbox for the first time. Importantly, this document should not be considered as representative of high standards of project management! For an advanced template for project management, see https://github.com/gslab-econ/template. 
 
-The manual with all the instructions is included in the folder "Documentation".
+Find the pdf manual with all the instructions included in the folder "Documentation".
 
 Comments are very welcome!
+
+## Prerequisites
+
+You need to have Stata installed in your computer, a GitHub account as well as Git. While I tried to be as self-contained as possible with this simple manual, I strongly recommend that you read some introductory material about what GitHub is.
