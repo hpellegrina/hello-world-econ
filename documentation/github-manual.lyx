@@ -656,43 +656,6 @@ projects-my-hello-world-data-repo
 \end_inset
 
 .
- Manually put 
-\begin_inset Quotes eld
-\end_inset
-
-macro_indicators.dta
-\begin_inset Quotes erd
-\end_inset
-
- that is inside the folder 
-\begin_inset Quotes eld
-\end_inset
-
-datastorage-for-practice
-\begin_inset Quotes erd
-\end_inset
-
- into this folder.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-In a real project, we will avoid keeping any data file in 
-\begin_inset Quotes eld
-\end_inset
-
-git
-\begin_inset Quotes erd
-\end_inset
-
- folders.
- I'm keeping this .dta file here only for demonstration purposes.
- 
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Enumerate
@@ -734,13 +697,61 @@ git clone https://github.com/hpellegrina/projects-hello-world-econ
 \end_layout
 
 \begin_layout Enumerate
+Manually copy 
+\begin_inset Quotes eld
+\end_inset
+
+macro_indicators.dta
+\begin_inset Quotes erd
+\end_inset
+
+ that is inside the folder 
+\begin_inset Quotes eld
+\end_inset
+
+datastorage-for-practice
+\begin_inset Quotes erd
+\end_inset
+
+ into 
+\begin_inset Quotes eld
+\end_inset
+
+projects-my-hello-world-data-repo
+\begin_inset Quotes erd
+\end_inset
+
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+In a real project, we will avoid keeping any data file in 
+\begin_inset Quotes eld
+\end_inset
+
+git
+\begin_inset Quotes erd
+\end_inset
+
+ folders.
+ I'm keeping this .dta file here only for demonstration purposes.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
 Type
 \emph on
- git clone projects-my-hello-world-econ-git.
+ git clone https://github.com/yourusername/projects-my-hello-world-econ.
  
 \emph default
-This makes a copy of the repository where you are going to commit the project
- based on mine.
+This makes a copy of the repository where you are going to commit to your
+ own project.
 \end_layout
 
 \begin_layout Enumerate
@@ -788,11 +799,27 @@ projects-my-hello-world-econ-data-repo"
 \end_layout
 
 \begin_layout Enumerate
-Manually copy all the documents from my project into your folder.
+Manually copy all the documents from 
+\begin_inset Quotes eld
+\end_inset
+
+projects-hello-world-econ
+\begin_inset Quotes erd
+\end_inset
+
+ into 
+\begin_inset Quotes eld
+\end_inset
+
+projects-my-hello-world-econ
+\begin_inset Quotes erd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Enumerate
-Run the stata do-file from your folder and create the new figure.
+Run the do-file from your folder and create the new figure.
  You may have to change the location of the directory inside the .do file.
 \end_layout
 
