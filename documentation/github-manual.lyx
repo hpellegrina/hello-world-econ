@@ -160,8 +160,8 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-GitHub is widely used online platform that computer scientists use to keep
- track of their codes and to collaborate in their projects.
+GitHub is a widely used online platform that computer scientists use to
+ keep track of their codes and to collaborate in their projects.
  The word GitHub is the combination of Git with Hub.
  Git is a version control system that stores all the history of a code.
  With Git, programmers can check what they changed their codes, when they
@@ -174,7 +174,7 @@ GitHub is widely used online platform that computer scientists use to keep
 \end_layout
 
 \begin_layout Subsection
-Why Should I use GitHub+Dropbox instead of just using Dropbox?
+Why should I use GitHub+Dropbox instead of just using Dropbox?
 \end_layout
 
 \begin_layout Standard
@@ -216,7 +216,7 @@ conflict
 \end_layout
 
 \begin_layout Subsection
-What is the Difference between Dropbox and GitHub?
+What is the difference between Dropbox and GitHub?
 \end_layout
 
 \begin_layout Standard
@@ -323,7 +323,7 @@ Push
 \end_layout
 
 \begin_layout Subsection
-Can I use GitHub as a Repository for my Datasets?
+Can I use GitHub as a repository for my datasets?
 \end_layout
 
 \begin_layout Standard
@@ -341,7 +341,7 @@ GitHub is a tool for keeping track of codes, but it is not supposed to be
 \end_layout
 
 \begin_layout Subsection
-Preliminaries for this Manual
+Prerequisites for this manual
 \end_layout
 
 \begin_layout Standard
@@ -361,7 +361,15 @@ Go to Git website and install git.
 \end_layout
 
 \begin_layout Section
-Commands for Terminal
+Commands for 
+\begin_inset Quotes eld
+\end_inset
+
+Terminal
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -398,17 +406,15 @@ literal "false"
 \end_inset
 
  (or the command line in windows).
- They may seem scary at first.
- But, in practice, you do not have to be a sophisticated programmer to use
- it.
- There are just a few commands that you have to memorize for your daily
- work (or just use the list below).
+ They may seem scary at first, but, in practice, you do not have to be a
+ sophisticated programmer to use it.
+ There are just a few commands that you have to use for your daily work.
  I see two main benefits in learning how to actually type the commands in
  Terminal.
  First, whenever you want to do something specific and you google about
  it, the answers that you get are mostly based on command lines.
- Therefore, to understand the answers that the community will give you,
- you need to have a basic understanding of the language that they are using.
+ Therefore, to understand the answers that are given by the online community,
+ you need to have a basic understanding of the language that they use.
  Second, there are some functionalities that I was not able to obtain with
  the graphical interface.
 \end_layout
@@ -834,6 +840,69 @@ Added first figure for Hello-World! I'm an Economist!
 \begin_layout Enumerate
 It's done! You can check your repository on the web in your account.
  It should contain all the additional files.
+\end_layout
+
+\begin_layout Section
+Additional Features for Teamwork
+\end_layout
+
+\begin_layout Subsection
+Adding collaborators
+\end_layout
+
+\begin_layout Standard
+To add collaborators into your GitHub repository, you can just use the website.
+ 
+\end_layout
+
+\begin_layout Itemize
+Click on the repository of the project.
+ 
+\end_layout
+
+\begin_layout Itemize
+Click on the settings of the repository (one of the tabs on the top).
+\end_layout
+
+\begin_layout Itemize
+Click on collaborators.
+\end_layout
+
+\begin_layout Itemize
+Type the email of you collaborator and add him there.
+\end_layout
+
+\begin_layout Subsection
+Issues
+\end_layout
+
+\begin_layout Standard
+An useful tool for the organization of tasks in GitHub is the use of 
+\begin_inset Quotes eld
+\end_inset
+
+Issues
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Any collaborator in a project can create a new issue on the website associated
+ with a repository and link their commits with these issues.
+ For example, one can go to a repository and create an issue such as 
+\begin_inset Quotes eld
+\end_inset
+
+Add clustered standard errors in table 1
+\begin_inset Quotes erd
+\end_inset
+
+.
+ When the issue is created it comes with a number.
+ Let's say this number is 1.
+ When someone in project commits something related to the issue, this person
+ can directly link his commit with the issue by writing in the beginning
+ of the message #1.
+ 
 \end_layout
 
 \end_body
