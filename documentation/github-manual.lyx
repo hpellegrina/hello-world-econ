@@ -122,16 +122,15 @@ theorems-std
 \begin_layout Title
 A Brief Introduction to GitHub for Social Scientists using Stata and Dropbox
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
-The purpose of this material is to serve just as an introduction to Github
- for Social Scientists.
- I hope that this material can be useful for Social Scientists in general
- who are trying to integrate Github with Dropbox for the first time.
+The purpose of this material is to serve just as an introduction to Github.
+ I hope that this material can be useful for Social Scientists who are trying
+ to integrate Github with Dropbox for the first time.
  This document should not be considered as representative of high standards
- of project management! For an advanced template for project management,
- see the material that Pr.
+ of project management! For an advanced template of project management using
+ GitHub, see the material that Pr.
  Jesse Shapiro shared in his Github (
 \begin_inset CommandInset href
 LatexCommand href
@@ -165,8 +164,8 @@ GitHub is a widely used online platform that computer scientists use to
  The word GitHub is the combination of Git with Hub.
  Git is a version control system that stores all the history of a code.
  With Git, programmers can check what they changed their codes, when they
- changed their codes, and they can also go back to previous versions of
- their projects if they do not like the changes that they made.
+ changed their codes, and they can also restore previous versions of their
+ projects.
  GitHub is a web-based repository that keeps all the history of a code on
  a cloud using the Git system.
  Since everything is in a cloud, it allows many researchers to colaborate
@@ -184,7 +183,7 @@ Dropbox is a great resource for teamwork.
 ly syncronized across computers.
  However, as projects multiply, become larger and gain many collaborators,
  one may run into problems.
- First, if you have worked with Dropbox with many collaborators you probably
+ First, if you have used Dropbox to work with many collaborators you probably
  noticed the generation of 
 \begin_inset Quotes eld
 \end_inset
@@ -198,10 +197,10 @@ conflict
  there is more than one sincronization happening at the same time.
  As I explain below, GitHub tends to avoid this problem because files are
  not automatically sincronized.
- Second, Dropbox lacks a more sophisticated system to track what changed
+ Second, Dropbox lacks a more sophisticated system to track what changes
  in each version of a code.
  If something changes, we do not know who changed a code and what exactly
- changed.
+ changed in it.
  GitHub has an interface that makes it easy to identify these changes.
  Third, if you want to bring back previous versions of a project, GitHub
  can do it quickly, but with Dropbox, we can only bring back specific files
@@ -877,7 +876,7 @@ Issues
 \end_layout
 
 \begin_layout Standard
-An useful tool for the organization of tasks in GitHub is the use of 
+A useful tool for the organization of tasks in GitHub is the use of 
 \begin_inset Quotes eld
 \end_inset
 
@@ -902,6 +901,9 @@ Add clustered standard errors in table 1
  When someone in project commits something related to the issue, this person
  can directly link his commit with the issue by writing in the beginning
  of the message #1.
+ When you do so, the website will display a small notification under the
+ issue with the user who updated the issue and also what was added there.
+ You can also assign issues to specific people in the project.
  
 \end_layout
 
