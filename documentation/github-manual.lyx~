@@ -129,8 +129,8 @@ The purpose of this material is to serve just as an introduction to Github.
  I hope that this material can be useful for Social Scientists who are trying
  to integrate Github with Dropbox for the first time.
  This document should not be considered as representative of high standards
- of project management! For an advanced template of project management,
- see the material that Pr.
+ of project management! For an advanced template of project management using
+ GitHub, see the material that Pr.
  Jesse Shapiro shared in his Github (
 \begin_inset CommandInset href
 LatexCommand href
@@ -360,15 +360,7 @@ Go to Git website and install git.
 \end_layout
 
 \begin_layout Section
-Commands for 
-\begin_inset Quotes eld
-\end_inset
-
-Terminal
-\begin_inset Quotes erd
-\end_inset
-
-
+Sincronization with GitHub
 \end_layout
 
 \begin_layout Standard
