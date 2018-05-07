@@ -130,8 +130,8 @@ The purpose of this material is to serve just as an introduction to Github.
  to integrate Github with Dropbox for the first time.
  This document should not be considered as representative of high standards
  of project management! For an advanced template of project management using
- GitHub, see the material that Pr.
- Jesse Shapiro shared in his Github (
+ GitHub, see the material that Jesse Shapiro and Matthew Gentzkow shared
+ in their GitHub account (
 \begin_inset CommandInset href
 LatexCommand href
 name "click here"
@@ -583,9 +583,9 @@ How a typical day of work looks like?
 \end_layout
 
 \begin_layout Itemize
-You start by going to the directory on the desktop where the project using
- the terminal window.
- Type 
+You start by going to the directory on the desktop where the project is
+ located using the terminal window.
+ You then type 
 \emph on
 git pull
 \emph default
@@ -643,13 +643,9 @@ We will be following the tradition in computer science.
 Before you start, make sure that you have a GitHub account and that you
  have installed Git into your machine.
  To double check if it is properly installed, go to terminal and type 
-\begin_inset Quotes eld
-\end_inset
-
+\emph on
 git
-\begin_inset Quotes erd
-\end_inset
-
+\emph default
 .
  If it is already installed, it will show a list of commands that you can
  use.
@@ -660,7 +656,7 @@ Create a repository called
 \begin_inset Quotes eld
 \end_inset
 
-projects-my-hello-world-econ
+my-hello-world-econ
 \begin_inset Quotes erd
 \end_inset
 
@@ -668,15 +664,16 @@ projects-my-hello-world-econ
 \end_layout
 
 \begin_layout Enumerate
-Create a folder in Dropbox called 
+Create a folder in your Dropbox called 
 \begin_inset Quotes eld
 \end_inset
 
-projects-my-hello-world-data-repo
+my-hello-world-data-repo
 \begin_inset Quotes erd
 \end_inset
 
 .
+ This is the folder where the data will be stored.
 \end_layout
 
 \begin_layout Enumerate
@@ -703,7 +700,7 @@ cd.
 \begin_layout Enumerate
 Type 
 \emph on
-git clone https://github.com/hpellegrina/projects-hello-world-econ
+git clone https://github.com/hpellegrina/hello-world-econ
 \emph default
  .
  This makes a copy of my repository into your computer.
@@ -711,7 +708,27 @@ git clone https://github.com/hpellegrina/projects-hello-world-econ
 \end_layout
 
 \begin_layout Enumerate
-Manually copy 
+Type
+\emph on
+ git clone https://github.com/yourusername/my-hello-world-econ.
+ 
+\emph default
+This makes a copy of the repository that you created in Step 2 into your
+ computer.
+\end_layout
+
+\begin_layout Enumerate
+In the folder that you copied from me in Step 6, there is a folder called
+ 
+\begin_inset Quotes eld
+\end_inset
+
+datastore-for-practice
+\begin_inset Quotes erd
+\end_inset
+
+.
+ In this folder, there is a file called 
 \begin_inset Quotes eld
 \end_inset
 
@@ -719,23 +736,17 @@ macro_indicators.dta
 \begin_inset Quotes erd
 \end_inset
 
- that is inside the folder 
-\begin_inset Quotes eld
-\end_inset
-
-datastorage-for-practice
-\begin_inset Quotes erd
-\end_inset
-
- into 
-\begin_inset Quotes eld
-\end_inset
-
-projects-my-hello-world-data-repo
-\begin_inset Quotes erd
-\end_inset
-
 .
+ Copy that file into 
+\begin_inset Quotes eld
+\end_inset
+
+my-hello-world-data-repo
+\begin_inset Quotes erd
+\end_inset
+
+ which you created in Step 3.
+ You may do this using finder.
 \begin_inset Foot
 status collapsed
 
@@ -749,7 +760,8 @@ git
 \end_inset
 
  folders.
- I'm keeping this .dta file here only for demonstration purposes.
+ I'm keeping this .dta file here in my git folder only for demonstration
+ purposes.
  
 \end_layout
 
@@ -759,37 +771,40 @@ git
 \end_layout
 
 \begin_layout Enumerate
-Type
-\emph on
- git clone https://github.com/yourusername/projects-my-hello-world-econ.
- 
-\emph default
-This makes a copy of the repository where you are going to commit to your
- own project.
-\end_layout
-
-\begin_layout Enumerate
-Type 
-\emph on
-cd projects-my-hello-world-econ.
-\end_layout
-
-\begin_layout Enumerate
-Create a 
+Copy all the remaining files from 
 \begin_inset Quotes eld
 \end_inset
 
-fake
+hello-world-econ
 \begin_inset Quotes erd
 \end_inset
 
- link to the Dropbox folder.
- To do so, type 
-\emph on
-ln -s /Users/putyournamehere/ Dropbox/ projects-my-hello-world-econ-data-repo
- /Users/puyournamehere/ Dropbox/projects-my-hello-world-econ/datastorage
-\emph default
+ into 
+\begin_inset Quotes eld
+\end_inset
+
+my-hello-world-econ
+\begin_inset Quotes erd
+\end_inset
+
 .
+\end_layout
+
+\begin_layout Enumerate
+In terminal, go to the folder 
+\begin_inset Quotes eld
+\end_inset
+
+my-hello-world-econ
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Type 
+\emph on
+ln -s /Users/UserName/Dropbox/my-hello-world-econ-data-repo datastor
+\emph default
+e.
 \begin_inset Foot
 status collapsed
 
@@ -804,34 +819,81 @@ Users
 \backslash
  Dropbox
 \backslash
-projects-my-hello-world-econ-data-repo" 
+my-hello-world-econ-data-repo" 
 \end_layout
 
 \end_inset
 
-
+ 
 \end_layout
 
-\begin_layout Enumerate
-Manually copy all the documents from 
+\begin_deeper
+\begin_layout Itemize
+This step creates a folder within 
 \begin_inset Quotes eld
 \end_inset
 
-projects-hello-world-econ
+my-hello-world-econ
 \begin_inset Quotes erd
 \end_inset
 
- into 
+ called 
 \begin_inset Quotes eld
 \end_inset
 
-projects-my-hello-world-econ
+datastore
+\begin_inset Quotes erd
+\end_inset
+
+ that is actually using the information from the folder 
+\begin_inset Quotes eld
+\end_inset
+
+my-hello-world-econ-data-repo
 \begin_inset Quotes erd
 \end_inset
 
 .
+ This is what is called a 
+\series bold
+hard link
+\series default
+.
+ By doing so, when you commit the files later you are going to push to the
+ cloud a 
+\begin_inset Quotes eld
+\end_inset
+
+fake
+\begin_inset Quotes erd
+\end_inset
+
+ folder that does not have any data in it.
+ The benefit of having this 
+\begin_inset Quotes eld
+\end_inset
+
+fake
+\begin_inset Quotes erd
+\end_inset
+
+ folder here is that when we write our codes it becomes easier to work with
+ relative paths for a project.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Relative paths is when we write the links in our codes all in relative terms.
+ By doing so, we do not have to keep track of where exactly the files are
+ located in your desktop.
 \end_layout
 
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
 \begin_layout Enumerate
 Run the do-file from your folder and create the new figure.
  You may have to change the location of the directory inside the .do file.
@@ -843,7 +905,7 @@ Go back to terminal and type
 git add -A.
  
 \emph default
-With this command we add our changes to the commit.
+With this command, you added your changes to the commit.
 \end_layout
 
 \begin_layout Enumerate
@@ -866,12 +928,12 @@ Added first figure for Hello-World! I'm an Economist!
 \begin_inset Quotes erd
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Enumerate
-It's done! You can check your repository on the web in your account.
- It should contain all the additional files.
+It's done! You can check your repository on GitHub.com in your account.
+ It should contain all the files from this exercise.
 \end_layout
 
 \begin_layout Section
@@ -932,8 +994,8 @@ Add clustered standard errors in table 1
 .
  When the issue is created it comes with a number.
  Let's say this number is 1.
- When someone in project commits something related to the issue, this person
- can directly link his commit with the issue by writing in the beginning
+ When someone in the project commits something related to the issue, this
+ person can directly link his commit with the issue by writing in the beginning
  of the message #1.
  When you do so, the website will display a small notification under the
  issue with the user who updated the issue and also what was added there.

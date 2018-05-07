@@ -1,6 +1,6 @@
 clear all
 * Write down the directory below
-cd "/Users/heitorpellegrina/Dropbox/projects-hello-world-econ/analysis/code"
+cd "/Users/heitorpellegrina/Dropbox/hello-world-econ/analysis/code"
 
 program main
 	clean_data
@@ -8,7 +8,7 @@ program main
 end
 
 program clean_data
-	use "../.././datastorage/macro_indicators.dta", clear
+	use "../.././datastore/macro_indicators.dta", clear
 	gen va_rural_worker = va_ag/(pop_total-pop_urban)
 	gen urban_share = pop_urban/pop_total
 end
