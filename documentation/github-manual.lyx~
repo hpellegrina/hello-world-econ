@@ -160,16 +160,17 @@ Introduction
 
 \begin_layout Standard
 GitHub is a widely used online platform that computer scientists use to
- keep track of their codes and to collaborate in their projects.
+ keep track of their codes and to collaborate on their projects.
  The word GitHub is the combination of Git with Hub.
  Git is a version control system that stores all the history of a code.
- With Git, programmers can check what they changed their codes, when they
- changed their codes, and they can also restore previous versions of their
- projects.
+ With Git, programmers can check what they changed in their codes and when
+ they changed their codes.
+ They can also restore previous versions of their projects if they do not
+ like their new versions.
  GitHub is a web-based repository that keeps all the history of a code on
  a cloud using the Git system.
  Since everything is in a cloud, it allows many researchers to colaborate
- in a project.
+ on a specific project.
 \end_layout
 
 \begin_layout Subsection
@@ -181,8 +182,8 @@ Why should I use GitHub+Dropbox instead of just using Dropbox?
 Dropbox is a great resource for teamwork.
  It allows many people to work on the same project and everything is automatical
 ly synchronized across computers.
- However, as projects multiply, become larger and gain many collaborators,
- one may run into problems.
+ However, as projects expand in terms of size and collaborators, one may
+ run into problems.
  First, if you have used Dropbox to work with many collaborators you probably
  noticed the generation of 
 \begin_inset Quotes eld
@@ -932,7 +933,7 @@ Added first figure for Hello-World! I'm an Economist!
 \end_layout
 
 \begin_layout Enumerate
-It's done! You can check your repository on GitHub.com in your account.
+It is done! You can check your repository on GitHub.com in your account.
  It should contain all the files from this exercise.
 \end_layout
 
