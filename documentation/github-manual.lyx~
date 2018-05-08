@@ -679,7 +679,8 @@ my-hello-world-data-repo
 
 \begin_layout Enumerate
 Open the terminal.
- Connect your computer to your online account by typing 
+ Connect your computer to your online account by typing in your terminal
+ 
 \emph on
 git config –global user.email 
 \begin_inset Quotes eld
