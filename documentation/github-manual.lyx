@@ -122,7 +122,7 @@ theorems-std
 \begin_layout Title
 A Brief Introduction to GitHub for Social Scientists using Stata and Dropbox
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 The purpose of this material is to serve just as an introduction to Github.
@@ -943,6 +943,7 @@ Relative paths is when we write the links in our codes all in relative terms.
 \begin_layout Enumerate
 Run the do-file from your folder and create the new figure.
  You may have to change the location of the directory inside the .do file.
+ Save the changes
 \end_layout
 
 \begin_layout Enumerate

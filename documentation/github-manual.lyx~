@@ -130,8 +130,7 @@ The purpose of this material is to serve just as an introduction to Github.
  to integrate Github with Dropbox for the first time.
  This document should not be considered as representative of high standards
  of project management! For an advanced template of project management using
- GitHub, see the material that Jesse Shapiro and Matthew Gentzkow shared
- in their GitHub account (
+ GitHub, see the material here 
 \begin_inset CommandInset href
 LatexCommand href
 name "click here"
@@ -140,8 +139,8 @@ literal "false"
 
 \end_inset
 
-).
- I would like to thank Yaw Nyarko and Martin Smith for comments.
+.
+ I thank Yaw Nyarko and Martin Smith for comments.
  Contact: heitor.pellegrina@nyu.edu
 \end_layout
 
