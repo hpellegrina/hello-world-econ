@@ -122,7 +122,7 @@ theorems-std
 \begin_layout Title
 A Brief Introduction to GitHub for Social Scientists using Stata and Dropbox
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 The purpose of this material is to serve just as an introduction to Github.
@@ -142,6 +142,7 @@ literal "false"
 
 ).
  I would like to thank Yaw Nyarko and Martin Smith for comments.
+ Contact: heitor.pellegrina@nyu.edu
 \end_layout
 
 \end_inset
@@ -518,11 +519,11 @@ table_1_summary_stat.do
 \emph on
 git remove table_1_summary_stat.do 
 \emph default
-(this command will remove the do.file called 
+(this command will remove 
 \emph on
 table_1_summary_stat.do
 \emph default
- from the commit that you are preparing)
+ from the commit)
 \end_layout
 
 \begin_layout Itemize
