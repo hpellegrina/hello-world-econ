@@ -201,7 +201,7 @@ conflict
  Second, Dropbox lacks a more sophisticated system to track what changes
  in each version of a code.
  If something changes, we do not know who changed a code and what exactly
- changed in it.
+ they changed in it.
  GitHub has an interface that makes it easy to identify these changes.
  Third, if you want to bring back previous versions of a project, GitHub
  can do it quickly, but with Dropbox, we can only bring back specific files
@@ -262,8 +262,10 @@ y synchronized with the Master Repository and across all the Local Repositories
 \end_inset
 
 The way how synchronization works with Github is as follows.
- You first download all the repository containing the codes for the project
- to your computer using a process called 
+ You first download all the repository that cointains the codes for the
+ project to your computer.
+ If it is the first time that you are downloading a project, you use a process
+ called 
 \emph on
 
 \begin_inset Quotes eld
@@ -273,9 +275,10 @@ clone
 \begin_inset Quotes erd
 \end_inset
 
+.
 
 \emph default
- if it is the first time that you are downloading the project and a process
+ If you are just updating the project to your local repo, you use a process
  called 
 \emph on
 
@@ -288,7 +291,7 @@ Pull
 
 
 \emph default
- if you are just updating the project to your local repo.
+.
  Both are essentially downloading the files from the cloud.
  After you make your changes to the files, you can then upload them to this
  intermediary step called commit using a process called
@@ -304,7 +307,28 @@ add
 
 \emph default
 .
- You can upload these changes to the cloud using a process called 
+ Once you added everything that you want, you use a process called 
+\begin_inset Quotes eld
+\end_inset
+
+commit
+\begin_inset Quotes erd
+\end_inset
+
+, which basically packages all the 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+adds
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+ that you made.
+ You can upload this commit to the cloud using a process called 
 \begin_inset Quotes eld
 \end_inset
 
@@ -492,6 +516,18 @@ table_1_summary_stat.do
 \begin_layout Itemize
 
 \emph on
+git remove table_1_summary_stat.do 
+\emph default
+(this command will remove 
+\emph on
+table_1_summary_stat.do
+\emph default
+ from the commit)
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
 git add -A
 \emph default
  
@@ -579,13 +615,21 @@ pull
  the current version of the project to your desktop)
 \end_layout
 
+\begin_layout Itemize
+
+\emph on
+git status 
+\emph default
+(will show you the modifications/deletions that you made in your local repo)
+\end_layout
+
 \begin_layout Subsection
 How a typical day of work looks like?
 \end_layout
 
 \begin_layout Itemize
 You start by going to the directory on the desktop where the project is
- located using the terminal window.
+ located using the terminal.
  You then type 
 \emph on
 git pull
@@ -682,7 +726,7 @@ Open the terminal.
  Connect your computer to your online account by typing in your terminal
  
 \emph on
-git config –global user.email 
+git config --global user.email 
 \begin_inset Quotes eld
 \end_inset
 
@@ -934,6 +978,14 @@ Added first figure for Hello-World! I'm an Economist!
 \end_layout
 
 \begin_layout Enumerate
+Type 
+\emph on
+git push 
+\emph default
+to upload the commit to the master repo.
+\end_layout
+
+\begin_layout Enumerate
 It is done! You can check your repository on GitHub.com in your account.
  It should contain all the files from this exercise.
 \end_layout
@@ -1003,6 +1055,45 @@ Add clustered standard errors in table 1
  issue with the user who updated the issue and also what was added there.
  You can also assign issues to specific people in the project.
  
+\end_layout
+
+\begin_layout Subsection
+Branches
+\end_layout
+
+\begin_layout Standard
+Another useful tool for teamwork is the creation of branches.
+ Let's say that you want to test the results from your paper using a restricted
+ sample, but you do not want to affect your current results because it is
+ possible that the restricted sample contains problems that you may find
+ while working on it.
+ In this case, you can create a 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+branch
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ This is a parallel repo on the cloud that your co-authors can use.
+ In that case, we have
+\begin_inset Formula 
+\begin{align*}
+\text{Master Repo (on the web)} & \iff\text{Commit}\iff\text{Local Repo (in your computer)}\\
+\uparrow\downarrow\\
+\text{Branch Repo (on the web)} & \iff\text{Commit}\iff\text{Local Repo (in your computer)}
+\end{align*}
+
+\end_inset
+
+If the new sample works well, you may merge the branch with the master repo.
+ If not, you can just delete the branch and the master repo will still be
+ intact.
 \end_layout
 
 \end_body
