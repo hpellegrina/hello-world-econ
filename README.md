@@ -5,7 +5,7 @@ Importantly, the purpose of this material is to serve just as an introduction to
 
 Find the pdf manual with all the instructions included in the folder "Documentation".
 
-Comments are welcome!
+This is very preliminary! Any comments would be highly appreciated!
 
 ## Prerequisites
 
