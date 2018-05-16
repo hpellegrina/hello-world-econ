@@ -122,7 +122,7 @@ theorems-std
 \begin_layout Title
 A Brief Introduction to GitHub for Social Scientists using Stata and Dropbox
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 The purpose of this material is to serve just as an introduction to Github.
@@ -140,7 +140,7 @@ literal "false"
 \end_inset
 
 .
- I thank Yaw Nyarko and Martin Smith for comments.
+ I thank Yaw Nyarko, Andres Ramirez and Martin Smith for comments.
  Contact: heitor.pellegrina@nyu.edu
 \end_layout
 
@@ -373,7 +373,16 @@ Before you move forward, make sure that you do the following
 \end_layout
 
 \begin_layout Itemize
-Go to GitHub and set up an account.
+Go to GitHub and set up an account (
+\begin_inset CommandInset href
+LatexCommand href
+name "click here"
+target "https://github.com/"
+literal "false"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Itemize
@@ -381,7 +390,16 @@ Follow their introduction guide.
 \end_layout
 
 \begin_layout Itemize
-Go to Git website and install git.
+Go to Git website and install git (
+\begin_inset CommandInset href
+LatexCommand href
+name "click here"
+target "https://git-scm.com/book/en/v2/Getting-Started-Installing-Git"
+literal "false"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Section
@@ -713,7 +731,7 @@ Create a folder in your Dropbox called
 \begin_inset Quotes eld
 \end_inset
 
-my-hello-world-data-repo
+my-hello-world-econ-data-repo
 \begin_inset Quotes erd
 \end_inset
 
@@ -846,13 +864,14 @@ my-hello-world-econ
 \end_inset
 
 .
+ Delete the file called datastore.
  Type 
 \emph on
 ln -s /Users/UserName/Dropbox/my-hello-world-econ-data-repo datastor
 \emph default
 e.
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 For PC users, you have to type 
@@ -866,6 +885,9 @@ Users
  Dropbox
 \backslash
 my-hello-world-econ-data-repo" 
+\emph default
+in the Windows Command Prompter.
+ 
 \end_layout
 
 \end_inset
@@ -902,9 +924,31 @@ my-hello-world-econ-data-repo
 .
  This is what is called a 
 \series bold
-hard link
+symbolic link
 \series default
 .
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The definition given on the internet is 
+\begin_inset Quotes eld
+\end_inset
+
+A symbolic link, also termed a soft link, is a special kind of file that
+ points to another file, much like a shortcut in Windows or a Macintosh
+ alias.
+ Unlike a hard link, a symbolic link does not contain the data in the target
+ file.
+ It simply points to another entry somewhere in the file system.
+\begin_inset Quotes eld
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
  By doing so, when you commit the files later you are going to push to the
  cloud a 
 \begin_inset Quotes eld
@@ -929,9 +973,45 @@ fake
 status collapsed
 
 \begin_layout Plain Layout
-Relative paths is when we write the links in our codes all in relative terms.
+Relative paths is when we write all links in our codes in relative terms.
  By doing so, we do not have to keep track of where exactly the files are
  located in your desktop.
+ For example, consider that you are using Stata and you want to use a certain
+ dataset that is located in 
+\begin_inset Quotes eld
+\end_inset
+
+/Username/Dropbox/spatial-economy-project/datasets/mydata.dta
+\begin_inset Quotes erd
+\end_inset
+
+.
+ This would be a problem if you are running a code from a computer with
+ a different path to the data.
+ You would have to change this line of command according to your computer.
+ There is a way of organizing the project so that in your code you just
+ have 
+\begin_inset Quotes eld
+\end_inset
+
+.././datasets/mydata.dta
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Stata recognizes the directory of the code and finds the file 
+\begin_inset Quotes eld
+\end_inset
+
+mydata.dta
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\series bold
+relative
+\series default
+ to the directory where your code is located.
 \end_layout
 
 \end_inset
