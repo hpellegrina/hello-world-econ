@@ -140,7 +140,7 @@ literal "false"
 \end_inset
 
 .
- I thank Yaw Nyarko, Andres Ramirez and Martin Smith for comments.
+ I thank Yaw Nyarko, Andres Fajardo and Martin Smith for comments.
  Contact: heitor.pellegrina@nyu.edu
 \end_layout
 
@@ -970,12 +970,48 @@ fake
  folder here is that when we write our codes it becomes easier to work with
  relative paths for a project.
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
-Relative paths is when we write the all links in our codes in relative terms.
+Relative paths is when we write all links in our codes in relative terms.
  By doing so, we do not have to keep track of where exactly the files are
  located in your desktop.
+ For example, consider that you are using Stata and you want to use a certain
+ dataset that is located in 
+\begin_inset Quotes eld
+\end_inset
+
+/Username/Dropbox/spatial-economy-project/datasets/mydata.dta
+\begin_inset Quotes erd
+\end_inset
+
+.
+ This would be a problem if you are running a code from a computer with
+ a different path to the data.
+ You would have to change this line of command according to your computer.
+ There is a way of organizing the project so that in your code you just
+ have 
+\begin_inset Quotes eld
+\end_inset
+
+.././datasets/mydata.dta
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Stata recognizes the directory of the code and finds the file 
+\begin_inset Quotes eld
+\end_inset
+
+mydata.dta
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\series bold
+relative
+\series default
+ to the directory where your code is located.
 \end_layout
 
 \end_inset
