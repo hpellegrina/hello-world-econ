@@ -401,6 +401,29 @@ literal "false"
 ).
 \end_layout
 
+\begin_layout Subsubsection*
+Installing Git on Windows
+\end_layout
+
+\begin_layout Standard
+After downloading the installation file, execute the installer and leave
+ the default options in every step 
+\series bold
+except the last one.
+ 
+\series default
+At this point, check the option 
+\begin_inset Quotes eld
+\end_inset
+
+Enable symbolic links.
+\begin_inset Quotes erd
+\end_inset
+
+ Screen shots of this manual's recommended installing options are available
+ below in Appendix A.
+\end_layout
+
 \begin_layout Section
 Synchronization using GitHub
 \end_layout
@@ -420,7 +443,7 @@ point-and-click
  I found this software quite user friendly.
  Second, you can use the Terminal in Mac
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 If you are using a Mac computer and do not know what Terminal is, read this
@@ -450,6 +473,17 @@ literal "false"
  you need to have a basic understanding of the language that they use.
  Second, there are some functionalities that I was not able to obtain with
  the graphical interface.
+\end_layout
+
+\begin_layout Subsubsection*
+Terminal use in Windows
+\end_layout
+
+\begin_layout Standard
+After installing Git with the options mentioned above, you can use Git BASH
+ to work with same commands you would use if you were in a *NIX terminal.
+ This manual assumes you are executing commands from Git BASH and makes
+ clear when changes are needed if working on a Windows machine.
 \end_layout
 
 \begin_layout Subsection
@@ -873,20 +907,9 @@ e.
 status open
 
 \begin_layout Plain Layout
-For PC users, you have to type 
+For PC users, you have to go to the Windows Command Prompt and type 
 \emph on
-mklink /J datastore "C:
-\backslash
-Users
-\backslash
- USERNAME
-\backslash
- Dropbox
-\backslash
-my-hello-world-econ-data-repo" 
-\emph default
-in the Windows Command Prompter.
- 
+mklink /D datastore "C:/Users/USERNAME/Dropbox/my-hello-world-econ-data-repo"
 \end_layout
 
 \end_inset
@@ -1174,6 +1197,461 @@ branch
 If the new sample works well, you may merge the branch with the master repo.
  If not, you can just delete the branch and the master repo will still be
  intact.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\start_of_appendix
+Windows installation screenshots
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Windows installation options
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "30text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename input/git1.PNG
+	lyxscale 50
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "30text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename input/git2.PNG
+	lyxscale 50
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "30text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename input/git3.PNG
+	lyxscale 50
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "30text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename input/git4.PNG
+	lyxscale 50
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "30text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename input/git5.PNG
+	lyxscale 50
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "30text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename input/git6.PNG
+	lyxscale 50
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "30text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename input/git7.PNG
+	lyxscale 50
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "30text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename input/git8.PNG
+	lyxscale 50
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "30text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename input/git9.PNG
+	lyxscale 50
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 6cm
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "45text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename input/git10.PNG
+	lyxscale 50
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Useful links
+\end_layout
+
+\begin_layout Standard
+Here is a list of helpful online tutorials:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Git & GitHub Crash Course For Beginners"
+target "https://www.youtube.com/watch?v=SWYqp7iY_Tc"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Git Basics: Merge and Rebase"
+target "https://www.youtube.com/watch?v=dO9BtPDIHJ8"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Git Handout - Houtan Bastani"
+target "http://www.dynare.org/houtan/handouts/git_1_new_with_smartgit.pdf"
+literal "false"
+
+\end_inset
+
+
 \end_layout
 
 \end_body
