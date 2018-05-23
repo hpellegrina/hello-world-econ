@@ -345,6 +345,12 @@ Push
  project that existed before the mistake.
 \end_layout
 
+\begin_layout Standard
+
+\series bold
+See the Big Picture in the Appendix A to get a sense of how this will work!
+\end_layout
+
 \begin_layout Subsection
 Can I use GitHub as a repository for my datasets?
 \end_layout
@@ -481,9 +487,10 @@ Terminal use in Windows
 
 \begin_layout Standard
 After installing Git with the options mentioned above, you can use Git BASH
- to work with same commands you would use if you were in a *NIX terminal.
- This manual assumes you are executing commands from Git BASH and makes
- clear when changes are needed if working on a Windows machine.
+ to work with the same commands you would use if you were in a *NIX terminal.
+ When this manual asks you to use 'the terminal', you should use Git BASH.
+ There will be warnings when different commands are needed if working on
+ a Windows machine.
 \end_layout
 
 \begin_layout Subsection
@@ -735,14 +742,19 @@ We will be following the tradition in computer science.
 \end_layout
 
 \begin_layout Subsection
-Tutorial #1 - Create an online repository for a project and upload changes.
+Exercise #0 - Getting started.
+\end_layout
+
+\begin_layout Standard
+In this exercise you will set things up so that you have access to the files
+ needed for the subsequent exercises.
 \end_layout
 
 \begin_layout Enumerate
 Before you start, make sure that you have a GitHub account and that you
  have installed Git into your machine.
- To double check if it is properly installed, go to terminal and type the
- following command.
+ To double check that it is installed properly, go to terminal and type
+ the following command.
  If it is already installed, it will show a list of commands that you can
  use.
 \begin_inset listings
@@ -769,7 +781,7 @@ status open
 
 \begin_layout Plain Layout
 
-$ git config --global user.email example@example.example
+$ git config --global user.email your@email.address
 \end_layout
 
 \end_inset
@@ -778,7 +790,12 @@ $ git config --global user.email example@example.example
 \end_layout
 
 \begin_layout Enumerate
-Make a copy of my repository into your computer
+Make a copy of 
+\series bold
+hello-world-econ 
+\series default
+into your computer.
+ This is just to give you access to the files needed for this manual.
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline false
@@ -786,7 +803,7 @@ status open
 
 \begin_layout Plain Layout
 
-$ cd /sample/path/for/copy
+$ cd /sample/path/for/files
 \end_layout
 
 \begin_layout Plain Layout
@@ -797,6 +814,44 @@ $ git clone https://github.com/hpellegrina/hello-world-econ
 \end_inset
 
 
+\end_layout
+
+\begin_layout Enumerate
+There is a folder called 
+\series bold
+my-hello-world-econ-shared 
+\series default
+in 
+\series bold
+hello-world-econ.
+
+\series default
+ Copy this folder into your Dropbox folder.
+ This is the folder you will use to share data, documentation, etc., with
+ your collaborators.
+\end_layout
+
+\begin_layout Subsection
+Exercise #1 - Using GitHub to track codes.
+\end_layout
+
+\begin_layout Standard
+Remember the big picture: you are interested in GitHub because you want
+ to track the changes made to your project's codes.
+ In this exercise you will use GitHub to track the codes of a new project:
+\series bold
+ my-hello-world-econ
+\series default
+.
+
+\series bold
+ 
+\series default
+Specifically, you will (1) create a remote repository of your project in
+ GitHub, (2) configure git so that that it only tracks your codes, (3) set
+ up a local repository to work on your project, and (3) learn how to upload
+ local changes to the online repository.
+ 
 \end_layout
 
 \begin_layout Enumerate
@@ -815,12 +870,16 @@ my-hello-world-econ.
 \end_layout
 
 \begin_layout Enumerate
-Make a copy of your new repository into your Dropbox folder.
- This will create a folder called 
+Click on 'Create new file' to create a file called 
 \series bold
-my-hello-world-econ
+.gitignore 
 \series default
- in your computer's Dropbox.
+with the content below.
+ Note that (1) this file should be in the main folder of your project, (2)
+ the dot at the beginning of the name should be included, and (3) lines
+ that start with '#' are comments.
+ After creating the file, click on 'Commit changes to the master branch'.
+ 
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline false
@@ -828,7 +887,95 @@ status open
 
 \begin_layout Plain Layout
 
-$ cd /sample/path/to/Dropbox
+1.
+ # Ignore everything (in the main folder)...
+\end_layout
+
+\begin_layout Plain Layout
+
+2.
+ /*
+\end_layout
+
+\begin_layout Plain Layout
+
+3.
+ # Except README.md, .gitignore, Stata do-files, Python scripts and Matlab
+ codes
+\end_layout
+
+\begin_layout Plain Layout
+
+4.
+ !README.md
+\end_layout
+
+\begin_layout Plain Layout
+
+5.
+ !.gitignore
+\end_layout
+
+\begin_layout Plain Layout
+
+6.
+ !*.do
+\end_layout
+
+\begin_layout Plain Layout
+
+7.
+ !*.py
+\end_layout
+
+\begin_layout Plain Layout
+
+8.
+ !*.m
+\end_layout
+
+\end_inset
+
+ 
+\series bold
+Important note: 
+\series default
+Changes made to 
+\series bold
+.gitignore 
+\series default
+will only apply to untracked files.
+ If there are any files within these folders that git is already tracking,
+ you will need to untrack them first.
+ This can be the case if, for example, you already added a file to a commit.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "Here"
+target "http://www.codeblocq.com/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/"
+literal "false"
+
+\end_inset
+
+ is an example of how to go around this issue.
+\end_layout
+
+\begin_layout Enumerate
+Open a terminal window and use the following commands to create a local
+ copy of your repository.
+ This will create a folder called 
+\series bold
+my-hello-world-econ
+\series default
+ in your computer.
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ cd /sample/path/for/your/project
 \end_layout
 
 \begin_layout Plain Layout
@@ -842,18 +989,31 @@ $ git clone https://github.com/yourusername/my-hello-world-econ
 \end_layout
 
 \begin_layout Enumerate
-In 
+There is a
+\series bold
+ my-hello-world-econ-contents
+\series default
+ folder in 
 \series bold
 hello-world-econ
 \series default
-, there is a subfolder called 
-\series bold
-my-hello-world-econ-contents
-\series default
-.
- Copy the contents of this folder into 
+ (the repository you copied in Exercise #0).
+ Copy the 
+\bar under
+contents
+\bar default
+ of this folder into 
 \series bold
 my-hello-world-econ
+\series default
+.
+ Your local project folder should now have two subfolders: 
+\series bold
+analysis 
+\series default
+and 
+\series bold
+data
 \series default
 .
 \end_layout
@@ -861,13 +1021,15 @@ my-hello-world-econ
 \begin_layout Enumerate
 The files you just added to 
 \series bold
-my-hello-world 
+my-hello-world-econ
 \series default
-are changes you made to the project.
- You will now upload (push) these changes to the online repository.
- To do so, you need to pack (stage) these changes together into a bundle
- (commit) that you will then upload (push) to the online repository.
- Let's start by staging the changes to the commit.
+ are local changes you made to the project.
+ You will now update your online repository so that it incorporates these
+ changes.
+ To do so, you need to select (stage) the changed files you wish to update
+ into a bundle (commit) that you will then upload (push) to the online repositor
+y.
+ Let's start by staging the files to the commit.
  With the second command below you can check if the changes were added to
  the commit.
  
@@ -892,7 +1054,8 @@ $ git status
 \end_layout
 
 \begin_layout Enumerate
-Create a commit and add a comment that explains what changes are being made.
+Now, create a commit and add a comment that explains what changes are being
+ made.
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline false
@@ -904,7 +1067,7 @@ $ git commit -m
 \begin_inset Quotes eld
 \end_inset
 
-Added files
+Copied the contents of my-hello-world-econ-contents
 \begin_inset Quotes erd
 \end_inset
 
@@ -918,7 +1081,7 @@ Added files
 
 \begin_layout Enumerate
 Push the commit to the online repository.
- You may be asked to type your GitHub credentials at this point.
+ You will be asked to input your GitHub credentials at this point.
  
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
@@ -935,59 +1098,8 @@ $ git push
 
 \end_layout
 
-\begin_layout Subsection
-Tutorial # 2 - Set up your project for GitHub-Dropbox use.
-\end_layout
-
-\begin_layout Standard
-Remember the big picture: we are only interested in the history of changes
- made to the codes of our project.
- In this tutorial, you will configure your project folder so that (a) Dropbox
- automatically updates changes made to data files and (b) GitHub keeps track
- of codes.
- 
-\begin_inset CommandInset href
-LatexCommand href
-name "Here"
-target "https://www.atlassian.com/git/tutorials/saving-changes/gitignore"
-literal "false"
-
-\end_inset
-
- you can find a very helpful guide on this topic.
-\end_layout
-
 \begin_layout Enumerate
-Open Dropbox 'Preferences', go to 'Selective Sync' and uncheck all the 
-\series bold
-code 
-\series default
-folders within 
-\series bold
-my-hello-world-econ
-\series default
-.
- This includes the folders 
-\series bold
-analysis/code 
-\series default
-and 
-\series bold
-data/macro/code
-\series default
-.
-\end_layout
-
-\begin_layout Enumerate
-Go to the online repository of 
-\series bold
-my-hello-world-econ 
-\series default
-in
-\series bold
- 
-\series default
-
+Go to 
 \begin_inset CommandInset href
 LatexCommand href
 name "github.com"
@@ -996,55 +1108,37 @@ literal "false"
 
 \end_inset
 
- and create a new file called 
-\series bold
-.gitignore 
-\series default
-with the content below.
- Please note that (1) this file should be in the main folder of your project,
- (2) the dot at the beginning of the name should be included, and (3) lines
- that start with '#' are comments.
- Click on 
-\begin_inset Quotes eld
-\end_inset
-
-Commit changes to the master branch
-\begin_inset Quotes erd
-\end_inset
-
-.
-\begin_inset Float figure
-placement h
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename input/gitignore.png
-	scale 40
-	rotateOrigin center
-
-\end_inset
-
-
+ and check that the changes are now displayed in your online repository.
 \end_layout
 
-\end_inset
+\begin_layout Subsection
+Exercise # 2 - Using Dropbox to access data inputs.
+\end_layout
 
-
+\begin_layout Standard
+Remember the big picture: you are interested in Dropbox because it allows
+ you to share files with collaborators in one place.
+ You're not interested in the history of these files because they are either
+ static (e.g.
+ raw data, documentation, related papers) or they can be replicated by running
+ the code that produced them in the first place (e.g.
+ output tables from a do-file or pdf files from latex code).
+ In this exercise, you will work with your first data input: 
 \series bold
- 
+macro_indicators.csv
+\series default
+.
+ A collaborator uploaded this file to 
+\series bold
+my-hello-world-econ-shared
+\series default
+, the project's shared Dropbox folder you copied in Exercise #0.
 \end_layout
 
 \begin_layout Enumerate
-Update your local repository to download (fetch and rebase) any changes
- made to the online repository (in this case, the creation of 
-\series bold
-.gitignore
-\series default
-).
- First, you will check that you're standing on the 'master' branch.
+As always, you must start by updating your local repository to download
+ (fetch and rebase) any changes made to the online repository.
+ You will check before that you're standing on the 'master' branch.
  If you're not, the third line of code below will take you to that branch.
 \begin_inset Foot
 status open
@@ -1098,41 +1192,70 @@ $ git rebase origin/master
 
 \end_inset
 
-Your local repository should have incorporated the 
-\series bold
-.gitignore 
-\series default
-file you created in the online repository.
- 
-\series bold
-Important note: 
-\series default
-Changes made to 
-\series bold
-.gitignore 
-\series default
-will only apply to untracked files.
- If there are any files within these folders that git is already tracking,
- you will need to untrack them first.
- This can be the case if, for example, you already added a file to a commit.
- 
-\begin_inset CommandInset href
-LatexCommand href
-name "Here"
-target "http://www.codeblocq.com/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/"
-literal "false"
 
-\end_inset
-
- is an example of how to go around this issue.
-\end_layout
-
-\begin_layout Subsection
-Tutorial # 3 - Make your first contribution to a project.
 \end_layout
 
 \begin_layout Enumerate
-You will now start making changes to the projects
+You will now 'connect' to the data input.
+ Go to the folder 
+\series bold
+macro
+\series default
+ in your project's data folder and create a symbolic link called 
+\series bold
+input
+\series default
+.
+ This link must point to the folder in 
+\series bold
+my-hello-world-econ-shared
+\series default
+ that contains the file 
+\series bold
+macro_indicators.csv.
+ 
+\series default
+If you are using MacOS or *NIX, use the following commands in the terminal.
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ cd your/path/to/my-hello-world-econ/data/macro
+\end_layout
+
+\begin_layout Plain Layout
+
+$ ln -s path/to/Dropbox/my-hello-world-econ-shared/macro input
+\end_layout
+
+\end_inset
+
+ If you're using Windows, 
+\bar under
+open the Command Prompt as an administrator (not Git BASH)
+\bar default
+ and use the following commands.
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>> cd your/path/to/my-hello-world-econ/data/macro
+\end_layout
+
+\begin_layout Plain Layout
+
+>> mklink /D input /path/to/Dropbox/my-hello-world-econ-shared-macro
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Enumerate
@@ -1140,13 +1263,12 @@ Open the file
 \series bold
 import_macro_data.do 
 \series default
-and edit the path in the third line so that it points to your local copy
- of 
+and edit the path in the third line so that it points to 
 \series bold
 my-hello-world-econ/data/macro/code
 \series default
 .
- Run the do-file.
+ Save and run the do-file.
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline false
@@ -1180,13 +1302,12 @@ Open the file
 \series bold
 fig_va_urbanization.do 
 \series default
-and edit the path in the third line so that it points to your local copy
- of 
+and edit the path in the third line so that it points to 
 \series bold
 my-hello-world-econ/analysis/code
 \series default
 .
- Run the do-file.
+ Save and run the do-file.
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline false
@@ -1216,13 +1337,13 @@ status open
 \end_layout
 
 \begin_layout Enumerate
-The code you just ran added files to 
+The codes you just ran added files to 
 \series bold
-my-hello-world
+my-hello-world-econ
 \series default
 .
- You will now upload (push) the change you made to the do-file and check
- that the new graph is not uploaded to the online repository.
+ You will now upload (push) the changes you have made to the do-files, and
+ check that the files they created are not uploaded to your online repository.
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline false
@@ -1272,7 +1393,7 @@ literal "false"
 \end_inset
 
  and check that the changes in the online repository only include those
- in the 
+ made to the do-files.
 \end_layout
 
 \begin_layout Section
@@ -1390,6 +1511,53 @@ If the new sample works well, you may merge the branch with the master repo.
 
 \begin_layout Section
 \start_of_appendix
+Big Picture
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename input/bigpicture.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Boxes represent folders and their contents.
+ Yellow folders are synced with GitHub unless they are grey, which means
+ their contents are ignored by git.
+ Light blue folders are stored in Dropbox.
+ Arrows represent symbolic links.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
 Windows installation screenshots
 \end_layout
 
