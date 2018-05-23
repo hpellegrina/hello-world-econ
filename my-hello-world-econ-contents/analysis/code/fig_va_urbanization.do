@@ -1,6 +1,6 @@
 clear all
 * Write down the directory below
-cd "/your/path/to/my-hello-world-econ/analysis/code"
+cd "your/path/to/my-hello-world/analysis/code"
 
 program main
 	clean_data
@@ -8,7 +8,7 @@ program main
 end
 
 program clean_data
-	use "../.././data/macro/output/macro_indicators.dta", clear
+	use "../.././data/finaldata/output/data_for_analysis.dta", clear
 	gen va_rural_worker = va_ag/(pop_total-pop_urban)
 	gen urban_share = pop_urban/pop_total
 end
