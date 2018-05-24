@@ -758,7 +758,7 @@ Before you start, make sure that you have a GitHub account and that you
  If it is already installed, it will show a list of commands that you can
  use.
 \begin_inset listings
-lstparams "basicstyle={\ttfamily}"
+lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
 status open
 
@@ -775,7 +775,7 @@ $ git
 \begin_layout Enumerate
 Link git to your GitHub account.
 \begin_inset listings
-lstparams "basicstyle={\ttfamily}"
+lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
 status open
 
@@ -797,7 +797,7 @@ hello-world-econ
 into your computer.
  This is just to give you access to the files needed for this manual.
 \begin_inset listings
-lstparams "basicstyle={\ttfamily}"
+lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
 status open
 
@@ -881,7 +881,7 @@ with the content below.
  After creating the file, click on 'Commit changes to the master branch'.
  
 \begin_inset listings
-lstparams "basicstyle={\ttfamily}"
+lstparams "basicstyle={\scriptsize\ttfamily},tabsize=3"
 inline false
 status open
 
@@ -969,7 +969,7 @@ my-hello-world-econ
 \series default
  in your computer.
 \begin_inset listings
-lstparams "basicstyle={\ttfamily}"
+lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
 status open
 
@@ -1034,7 +1034,7 @@ y.
  the commit.
  
 \begin_inset listings
-lstparams "basicstyle={\ttfamily}"
+lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
 status open
 
@@ -1057,7 +1057,7 @@ $ git status
 Now, create a commit and add a comment that explains what changes are being
  made.
 \begin_inset listings
-lstparams "basicstyle={\ttfamily}"
+lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
 status open
 
@@ -1084,7 +1084,7 @@ Push the commit to the online repository.
  You will be asked to input your GitHub credentials at this point.
  
 \begin_inset listings
-lstparams "basicstyle={\ttfamily}"
+lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
 status open
 
@@ -1161,7 +1161,7 @@ literal "false"
 
 
 \begin_inset listings
-lstparams "basicstyle={\ttfamily}"
+lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
 status open
 
@@ -1217,7 +1217,7 @@ macro_indicators.csv.
 \series default
 If you are using MacOS or *NIX, use the following commands in the terminal.
 \begin_inset listings
-lstparams "basicstyle={\ttfamily}"
+lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
 status open
 
@@ -1239,7 +1239,7 @@ open the Command Prompt as an administrator (not Git BASH)
 \bar default
  and use the following commands.
 \begin_inset listings
-lstparams "basicstyle={\ttfamily}"
+lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
 status open
 
@@ -1270,7 +1270,7 @@ my-hello-world-econ/data/macro/code
 .
  Save and run the do-file.
 \begin_inset listings
-lstparams "basicstyle={\ttfamily}"
+lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
 status open
 
@@ -1309,7 +1309,7 @@ my-hello-world-econ/analysis/code
 .
  Save and run the do-file.
 \begin_inset listings
-lstparams "basicstyle={\ttfamily}"
+lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
 status open
 
@@ -1345,7 +1345,7 @@ my-hello-world-econ
  You will now upload (push) the changes you have made to the do-files, and
  check that the files they created are not uploaded to your online repository.
 \begin_inset listings
-lstparams "basicstyle={\ttfamily}"
+lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
 status open
 
@@ -1365,7 +1365,7 @@ $ git commit -m
 \begin_inset Quotes eld
 \end_inset
 
-Changed path in fig_va_urbanization.do
+Changed do-files
 \begin_inset Quotes erd
 \end_inset
 

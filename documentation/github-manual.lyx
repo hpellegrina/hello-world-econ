@@ -1216,6 +1216,17 @@ macro_indicators.csv.
  
 \series default
 If you are using MacOS or *NIX, use the following commands in the terminal.
+ See this 
+\begin_inset CommandInset href
+LatexCommand href
+name "link"
+target "https://github.com/git-for-windows/git/wiki/Symbolic-Links"
+literal "false"
+
+\end_inset
+
+ for a helpful review of symbolic links.
+ 
 \begin_inset listings
 lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
