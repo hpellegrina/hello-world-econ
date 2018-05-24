@@ -686,58 +686,113 @@ How a typical day of work looks like?
 \end_layout
 
 \begin_layout Itemize
-You start by going to the directory on the desktop where the project is
- located using the terminal.
- You then type 
-\emph on
-git pull
-\emph default
- to update the directory with everything that everybody else may have changed.
- 
+You start by going to your project's local folder in a terminal window and
+ download (pull) any changes your collaborators may have uploaded to the
+ online repository.
+\begin_inset listings
+lstparams "basicstyle={\scriptsize\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ cd local/path/to/the/project
+\end_layout
+
+\begin_layout Plain Layout
+
+$ git pull
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-You make all the changes in the directory related to your task.
+You work on a task, i.e.
+ you make changes to the project's files.
 \end_layout
 
 \begin_layout Itemize
-You type 
-\emph on
-git add -A 
-\emph default
-to add all the changes that you made to your branch.
+You check the changes you have made and select (add) the changes you want
+ to approve into a bundle of changed files.
+\begin_inset listings
+lstparams "basicstyle={\scriptsize\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ git status
+\end_layout
+
+\begin_layout Plain Layout
+
+$ git add -A
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-You commit the changes using 
-\emph on
-git commit - m 
+You approve (commit) the changes and add a comment so that your collaborators
+ know what the changes consist in.
+\begin_inset listings
+lstparams "basicstyle={\scriptsize\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ git commit -m 
 \begin_inset Quotes eld
 \end_inset
 
-Issue 7: added table_1_summary_stat.do
-\begin_inset Quotes eld
+Issue #1: added table_1_summary_stat.do
+\begin_inset Quotes erd
 \end_inset
 
- 
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-You type 
-\emph on
-git push
-\emph default
-.
+You work on other tasks and make further commits for each (steps 3 and 4
+ above).
+\end_layout
+
+\begin_layout Itemize
+You upload all the commits you have made to the online repository.
+\begin_inset listings
+lstparams "basicstyle={\scriptsize\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ git push
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
-Hello-World! I'm an Economist! (.gitignore version)
+Hello-World! I'm an Economist!
 \end_layout
 
 \begin_layout Standard
 We will be following the tradition in computer science.
  Below you will have your first commits using GitHub, Stata and Dropbox.
- I taylored this commits to include some of the tricks to integrate Dropbox
+ I taylored these commits to include some of the tricks to integrate Dropbox
  with GitHub.
 \end_layout
 
@@ -837,8 +892,10 @@ Exercise #1 - Using GitHub to track codes.
 
 \begin_layout Standard
 Remember the big picture: you are interested in GitHub because you want
- to track the changes made to your project's codes.
- In this exercise you will use GitHub to track the codes of a new project:
+ to track the changes made to your project's codes and light files such
+ as output tables and graphs.
+ In this exercise, you will use GitHub to track the codes and graphs of
+ a new project:
 \series bold
  my-hello-world-econ
 \series default
@@ -848,9 +905,9 @@ Remember the big picture: you are interested in GitHub because you want
  
 \series default
 Specifically, you will (1) create a remote repository of your project in
- GitHub, (2) configure git so that that it only tracks your codes, (3) set
- up a local repository to work on your project, and (3) learn how to upload
- local changes to the online repository.
+ GitHub, (2) configure git so that that it ignores *.dta Stata files, (3)
+ set up a local repository to work on your project, and (3) learn how to
+ upload local changes to the online repository.
  
 \end_layout
 
@@ -864,7 +921,7 @@ literal "false"
 
 \end_inset
 
-and create a repository called 
+ and create a repository called 
 \series bold
 my-hello-world-econ.
 \end_layout
@@ -888,50 +945,13 @@ status open
 \begin_layout Plain Layout
 
 1.
- # Ignore everything (in the main folder)...
+ # Ignore all *.dta files in the project
 \end_layout
 
 \begin_layout Plain Layout
 
 2.
- /*
-\end_layout
-
-\begin_layout Plain Layout
-
-3.
- # Except README.md, .gitignore, Stata do-files, Python scripts and Matlab
- codes
-\end_layout
-
-\begin_layout Plain Layout
-
-4.
- !README.md
-\end_layout
-
-\begin_layout Plain Layout
-
-5.
- !.gitignore
-\end_layout
-
-\begin_layout Plain Layout
-
-6.
- !*.do
-\end_layout
-
-\begin_layout Plain Layout
-
-7.
- !*.py
-\end_layout
-
-\begin_layout Plain Layout
-
-8.
- !*.m
+ */.dta
 \end_layout
 
 \end_inset
@@ -957,7 +977,7 @@ literal "false"
 
 \end_inset
 
- is an example of how to go around this issue.
+ is an example of how to untrack files.
 \end_layout
 
 \begin_layout Enumerate
@@ -991,14 +1011,14 @@ $ git clone https://github.com/yourusername/my-hello-world-econ
 \begin_layout Enumerate
 There is a
 \series bold
- my-hello-world-econ-contents
+ my-hello-world-econ-contents.zip
 \series default
- folder in 
+ file in 
 \series bold
 hello-world-econ
 \series default
  (the repository you copied in Exercise #0).
- Copy the 
+ Extract the 
 \bar under
 contents
 \bar default
@@ -1027,8 +1047,8 @@ my-hello-world-econ
  You will now update your online repository so that it incorporates these
  changes.
  To do so, you need to select (stage) the changed files you wish to update
- into a bundle (commit) that you will then upload (push) to the online repositor
-y.
+ into a bundle of changes that you will then approve (commit) and upload
+ (push) to the online repository.
  Let's start by staging the files to the commit.
  With the second command below you can check if the changes were added to
  the commit.
@@ -1137,14 +1157,14 @@ my-hello-world-econ-shared
 
 \begin_layout Enumerate
 As always, you must start by updating your local repository to download
- (fetch and rebase) any changes made to the online repository.
- You will check before that you're standing on the 'master' branch.
+ (pull) any changes (commits) made to the online repository.
+ You will check that you're standing on the 'master' branch.
  If you're not, the third line of code below will take you to that branch.
 \begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Later on we will talk about branches! See 
+Later on we will talk about branches and how sometimes it ! See 
 \begin_inset CommandInset href
 LatexCommand href
 name "this"
@@ -1172,22 +1192,7 @@ $ cd your/path/to/my-hello-world-econ
 
 \begin_layout Plain Layout
 
-$ git branch
-\end_layout
-
-\begin_layout Plain Layout
-
-$ git checkout master
-\end_layout
-
-\begin_layout Plain Layout
-
-$ git fetch
-\end_layout
-
-\begin_layout Plain Layout
-
-$ git rebase origin/master
+$ git pull
 \end_layout
 
 \end_inset
@@ -1199,7 +1204,7 @@ $ git rebase origin/master
 You will now 'connect' to the data input.
  Go to the folder 
 \series bold
-macro
+population
 \series default
  in your project's data folder and create a symbolic link called 
 \series bold
@@ -1249,6 +1254,7 @@ $ ln -s path/to/Dropbox/my-hello-world-econ-shared/macro input
 open the Command Prompt as an administrator (not Git BASH)
 \bar default
  and use the following commands.
+ Note that we are using backslashes now and not forward slashes.
 \begin_inset listings
 lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
@@ -1256,12 +1262,30 @@ status open
 
 \begin_layout Plain Layout
 
->> cd your/path/to/my-hello-world-econ/data/macro
+>> cd your
+\backslash
+path
+\backslash
+to
+\backslash
+my-hello-world-econ
+\backslash
+data
+\backslash
+population
 \end_layout
 
 \begin_layout Plain Layout
 
->> mklink /D input /path/to/Dropbox/my-hello-world-econ-shared-macro
+>> mklink /D input 
+\backslash
+path
+\backslash
+to
+\backslash
+Dropbox
+\backslash
+my-hello-world-econ-shared-macro
 \end_layout
 
 \end_inset
@@ -1272,11 +1296,12 @@ status open
 \begin_layout Enumerate
 Open the file 
 \series bold
-import_macro_data.do 
+import_population.do 
 \series default
-and edit the path in the third line so that it points to 
+and edit the path in the third line so that it points to its folder, that
+ is, to 
 \series bold
-my-hello-world-econ/data/macro/code
+my-hello-world-econ/data/population/code
 \series default
 .
  Save and run the do-file.
@@ -1300,7 +1325,7 @@ status open
 \begin_layout Plain Layout
 
 3.
- cd "your/path/to/my-hello-world-econ/data/macro/code"
+ cd "your/path/to/my-hello-world-econ/data/population/code"
 \end_layout
 
 \end_inset
@@ -1309,52 +1334,43 @@ status open
 \end_layout
 
 \begin_layout Enumerate
-Open the file 
+Repeat the last step for the files 
+\series bold
+import_agricultural_output.do
+\series default
+, 
+\series bold
+make_data_for_analysis.do
+\series default
+ and 
 \series bold
 fig_va_urbanization.do 
 \series default
-and edit the path in the third line so that it points to 
+(in that order).
+ You can find the last one in the 
 \series bold
-my-hello-world-econ/analysis/code
+analysis
 \series default
-.
- Save and run the do-file.
-\begin_inset listings
-lstparams "basicstyle={\scriptsize\ttfamily}"
-inline false
-status open
-
-\begin_layout Plain Layout
-
-1.
- clear all
-\end_layout
-
-\begin_layout Plain Layout
-
-2.
- * Write down the directory below
-\end_layout
-
-\begin_layout Plain Layout
-
-3.
- cd "your/path/to/my-hello-world-econ/analysis/code"
-\end_layout
-
-\end_inset
-
-
+ folder.
 \end_layout
 
 \begin_layout Enumerate
-The codes you just ran added files to 
+The codes you edited and ran produced new files.
+ You will now upload (push) the changes you have made to your project to
+ the online repository.
+ Remember that we configured git to ignore *.dta files, so the files 
 \series bold
-my-hello-world-econ
+population.dta
 \series default
-.
- You will now upload (push) the changes you have made to the do-files, and
- check that the files they created are not uploaded to your online repository.
+, 
+\series bold
+agricultural_output.dta 
+\series default
+and 
+\series bold
+data_for_analysis.dta
+\series default
+ should not be uploaded to the online repository.
 \begin_inset listings
 lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
@@ -1403,8 +1419,16 @@ literal "false"
 
 \end_inset
 
- and check that the changes in the online repository only include those
- made to the do-files.
+ and check that the changes in the online repository do not include the
+ creation of *.dta files.
+\end_layout
+
+\begin_layout Standard
+You have made your first contribution to my-hello-world-econ! Make sure
+ you understand what each of the do-files are doing and how their relative
+ paths work.
+ The number of folders may seem excessive at first, but as a project grows
+ you will find it helpful.
 \end_layout
 
 \begin_layout Section
