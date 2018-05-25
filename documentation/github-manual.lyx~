@@ -1244,7 +1244,7 @@ $ cd your/path/to/my-hello-world-econ/data/macro
 
 \begin_layout Plain Layout
 
-$ ln -s path/to/Dropbox/my-hello-world-econ-shared/macro input
+$ ln -s your/path/to/Dropbox/my-hello-world-econ-shared/data/population/input
 \end_layout
 
 \end_inset
@@ -1277,7 +1277,7 @@ population
 
 \begin_layout Plain Layout
 
->> mklink /D input 
+>> mklink /D input your
 \backslash
 path
 \backslash
@@ -1285,12 +1285,26 @@ to
 \backslash
 Dropbox
 \backslash
-my-hello-world-econ-shared-macro
+my-hello-world-econ-shared
+\backslash
+data
+\backslash
+population
+\backslash
+input
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Enumerate
+Repeat the last step for the 
+\series bold
+agriculture 
+\series default
+folder.
 \end_layout
 
 \begin_layout Enumerate
@@ -1334,7 +1348,7 @@ status open
 \end_layout
 
 \begin_layout Enumerate
-Repeat this step for the files 
+Repeat the last step for the files 
 \series bold
 import_agricultural_output.do
 \series default
@@ -1342,60 +1356,35 @@ import_agricultural_output.do
 \series bold
 make_data_for_analysis.do
 \series default
-, and 
+ and 
 \series bold
 fig_va_urbanization.do 
 \series default
 (in that order).
+ You can find the last one in the 
+\series bold
+analysis
+\series default
+ folder.
 \end_layout
 
 \begin_layout Enumerate
-Open the file 
+The codes you edited and ran produced new files.
+ You will now upload (push) the changes you have made to your project to
+ the online repository.
+ Remember that we configured git to ignore *.dta files, so the files 
 \series bold
-fig_va_urbanization.do 
+population.dta
 \series default
-and edit the path in the third line so that it points to 
+, 
 \series bold
-my-hello-world-econ/analysis/code
+agricultural_output.dta 
 \series default
-.
- Save and run the do-file.
-\begin_inset listings
-lstparams "basicstyle={\scriptsize\ttfamily}"
-inline false
-status open
-
-\begin_layout Plain Layout
-
-1.
- clear all
-\end_layout
-
-\begin_layout Plain Layout
-
-2.
- * Write down the directory below
-\end_layout
-
-\begin_layout Plain Layout
-
-3.
- cd "your/path/to/my-hello-world-econ/analysis/code"
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
-The codes you just ran added files to 
+and 
 \series bold
-my-hello-world-econ
+data_for_analysis.dta
 \series default
-.
- You will now upload (push) the changes you have made to the do-files, and
- check that the files they created are not uploaded to your online repository.
+ should not be uploaded to the online repository.
 \begin_inset listings
 lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
@@ -1444,8 +1433,8 @@ literal "false"
 
 \end_inset
 
- and check that the changes in the online repository only include those
- made to the do-files.
+ and check that the changes in the online repository do not include the
+ creation of *.dta files.
 \end_layout
 
 \begin_layout Standard
@@ -1454,6 +1443,71 @@ You have made your first contribution to my-hello-world-econ! Make sure
  paths work.
  The number of folders may seem excessive at first, but as a project grows
  you will find it helpful.
+\end_layout
+
+\begin_layout Subsection
+Exercise # 3 - A shorter way to create multiple symbolic links.
+\end_layout
+
+\begin_layout Standard
+In Exercise #2 you created symbolic links to connect your project to the
+ the data inputs shared by collaborators on Dropbox.
+ As a project gets bigger, however, it may be tedious to create a large
+ number of symbolic links in the terminal when cloning a repository for
+ the first time.
+ In this exercise, you will run a Python script that creates symbolic links
+ for each of your project's data folders to connect them to their Dropbox
+ counterparts.
+ The Python script won't create a symbolic link for the
+\series bold
+ finaldata 
+\series default
+folder.
+\end_layout
+
+\begin_layout Enumerate
+Go to your project's data folder and delete all the symbolic links you created
+ in Exercise #2.
+\end_layout
+
+\begin_layout Enumerate
+Open a terminal window, go to your project and run the Python script input_slink
+s.py with the arguments below.
+ The first argument is the path to your po
+\begin_inset listings
+lstparams "basicstyle={\scriptsize\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ cd your/path/to/my-hello-world-econ
+\end_layout
+
+\begin_layout Plain Layout
+
+$ python3 input_slinks.py 
+\begin_inset Quotes eld
+\end_inset
+
+your/path/to/my-hello-world-econ
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+your/path/to/Dropbox/my-hello-world-econ-shared
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
