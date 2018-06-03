@@ -121,7 +121,7 @@ theorems-std
 \begin_layout Title
 A Brief Introduction to GitHub for Social Scientists using Stata and Dropbox
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 The purpose of this material is to serve just as an introduction to Github.
@@ -139,8 +139,8 @@ literal "false"
 \end_inset
 
 .
- I thank Yaw Nyarko, Andres Fajardo and Martin Smith for comments.
- Contact: heitor.pellegrina@nyu.edu
+ I thank Yaw Nyarko and Martin Smith for comments.
+ Contact: heitor.pellegrina@nyu.edu or andres.fajardo@nyu.edu.
 \end_layout
 
 \end_inset
@@ -150,7 +150,20 @@ literal "false"
 
 \begin_layout Author
 Heitor S.
- Pellegrina
+ Pellegrina 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+and
+\end_layout
+
+\end_inset
+
+ Andres Fajardo
 \end_layout
 
 \begin_layout Section
@@ -206,9 +219,9 @@ conflict
  can do it quickly, but with Dropbox, we can only bring back specific files
  one at a time.
  While some of these problems may be more likely to appear in large projects
- (imagine writing the codes for facebook for example...), as big empirical
- projects become more frequent in Economics, I believe that the use of Github
- will inevitably become more frequent as well.
+ (imagine writing the codes for facebook for example...), as large empirical
+ projects become more frequent in Economics, we believe that the use of
+ GitHub will inevitably become more frequent as well.
  The main cost of using GitHub is that you have to be much more systematic
  about the way how you work since you have to manually synchronize your
  changes with the cloud.
@@ -219,8 +232,8 @@ What is the difference between Dropbox and GitHub?
 \end_layout
 
 \begin_layout Standard
-For me, the main difference between Dropbox and GitHub is that now we have
- an intermediary step for the synchronization of files called
+The main difference between Dropbox and GitHub is that now we have an intermedia
+ry step for the synchronization of files called
 \emph on
  
 \begin_inset Quotes eld
@@ -348,7 +361,17 @@ Push
 \begin_layout Standard
 
 \series bold
-See the Big Picture in the Appendix A to get a sense of how this will work!
+See the Big Picture in the Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Big-Picture"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ to get a sense of how this will work!
 \end_layout
 
 \begin_layout Subsection
@@ -359,9 +382,8 @@ Can I use GitHub as a repository for my datasets?
 GitHub is a tool for keeping track of codes, but it is not supposed to be
  a repository for datasets.
  This is where an integration of Dropbox with Github is useful.
- GitHub can keep track of the codes that are written for a project, and
- we can leave the datasets and output of the project (figures, tables and
- pdfs) untracked.
+ GitHub can keep track of the codes of a project, and we can leave the datasets
+ and output of the project (figures, tables and pdfs) untracked.
  For example, a researcher can keep track of do-files that clean the data,
  but only keep the final version of the cleaned dataset.
  The idea is that, by keeping track of the code, we can always go back to
@@ -427,7 +449,17 @@ Enable symbolic links.
 \end_inset
 
  Screen shots of this manual's recommended installing options are available
- below in Appendix A.
+ below in Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Windows-installation-screenshots"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -446,49 +478,47 @@ point-and-click
 \end_inset
 
  your way through synchronization.
- I found this software quite user friendly.
- Second, you can use the Terminal in Mac
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-If you are using a Mac computer and do not know what Terminal is, read this
- website 
-\begin_inset CommandInset href
-LatexCommand href
-name "here"
-target "https://www.macworld.co.uk/how-to/mac-software/how-use-terminal-on-mac-3608274/"
-literal "false"
-
+ Second, you can use the Terminal in Mac (or the command line in windows,
+ see below).
+ The Terminal may seem scary at first, but, in practice, you do not have
+ to be a sophisticated programmer to use it.
+ There are just a few commands that you use for your daily work.
+ We see two benefits in learning how to type the commands in Terminal.
+ First, whenever you have a question about a specific task and you 
+\begin_inset Quotes eld
 \end_inset
 
-.
-\end_layout
-
+google
+\begin_inset Quotes erd
 \end_inset
 
- (or the command line in windows).
- They may seem scary at first, but, in practice, you do not have to be a
- sophisticated programmer to use it.
- There are just a few commands that you have to use for your daily work.
- I see two main benefits in learning how to actually type the commands in
- Terminal.
- First, whenever you want to do something specific and you google about
- it, the answers that you get are mostly based on command lines.
+ your question, the answers that you get are mostly based on command lines.
  Therefore, to understand the answers that are given by the online community,
  you need to have a basic understanding of the language that they use.
- Second, there are some functionalities that I was not able to obtain with
- the graphical interface.
+ Second, there are some functionalities that we were not able to obtain
+ with the graphical interface.
 \end_layout
 
 \begin_layout Subsubsection*
-Terminal use in Windows
+Terminal use if you use Windows
 \end_layout
 
 \begin_layout Standard
-After installing Git with the options mentioned above, you can use Git BASH
- to work with the same commands you would use if you were in a *NIX terminal.
- When this manual asks you to use 'the terminal', you should use Git BASH.
+After installing Git with the options mentioned above, if you use Windows,
+ you can use a software called Git BASH to work with the same commands that
+ you would use if you had a Mac.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+You may see references to *NIX on the internet.
+ This is a reference to operating systems that are based on UNIX.
+\end_layout
+
+\end_inset
+
+ When this manual asks you to use 'the terminal', you should use Git BASH
+ if you have Windows.
  There will be warnings when different commands are needed if working on
  a Windows machine.
 \end_layout
@@ -792,8 +822,6 @@ Hello-World! I'm an Economist!
 \begin_layout Standard
 We will be following the tradition in computer science.
  Below you will have your first commits using GitHub, Stata and Dropbox.
- I taylored these commits to include some of the tricks to integrate Dropbox
- with GitHub.
 \end_layout
 
 \begin_layout Subsection
@@ -808,10 +836,9 @@ In this exercise you will set things up so that you have access to the files
 \begin_layout Enumerate
 Before you start, make sure that you have a GitHub account and that you
  have installed Git into your machine.
- To double check that it is installed properly, go to terminal and type
- the following command.
- If it is already installed, it will show a list of commands that you can
- use.
+ To double check that Git is installed, go to terminal and type the following
+ command.
+ If it is already installed, it will show a list of Git commands.
 \begin_inset listings
 lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
@@ -850,7 +877,7 @@ Make a copy of
 hello-world-econ 
 \series default
 into your computer.
- This is just to give you access to the files needed for this manual.
+ This will bring the files needed for this exercise.
 \begin_inset listings
 lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
@@ -912,7 +939,7 @@ Specifically, you will (1) create a remote repository of your project in
 \end_layout
 
 \begin_layout Enumerate
-Go to 
+Go to your account in 
 \begin_inset CommandInset href
 LatexCommand href
 name "github.com"
@@ -936,6 +963,32 @@ with the content below.
  the dot at the beginning of the name should be included, and (3) lines
  that start with '#' are comments.
  After creating the file, click on 'Commit changes to the master branch'.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Changes made to 
+\series bold
+.gitignore 
+\series default
+will only apply to untracked files.
+ If there are any files within these folders that git is already tracking,
+ you will need to untrack them first.
+ This can be the case if, for example, you already added a file to a commit.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "Here"
+target "http://www.codeblocq.com/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/"
+literal "false"
+
+\end_inset
+
+ is an example of how to untrack files.
+\end_layout
+
+\end_inset
+
  
 \begin_inset listings
 lstparams "basicstyle={\scriptsize\ttfamily},tabsize=3"
@@ -956,28 +1009,7 @@ status open
 
 \end_inset
 
- 
-\series bold
-Important note: 
-\series default
-Changes made to 
-\series bold
-.gitignore 
-\series default
-will only apply to untracked files.
- If there are any files within these folders that git is already tracking,
- you will need to untrack them first.
- This can be the case if, for example, you already added a file to a commit.
- 
-\begin_inset CommandInset href
-LatexCommand href
-name "Here"
-target "http://www.codeblocq.com/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/"
-literal "false"
 
-\end_inset
-
- is an example of how to untrack files.
 \end_layout
 
 \begin_layout Enumerate
@@ -1046,9 +1078,20 @@ my-hello-world-econ
  are local changes you made to the project.
  You will now update your online repository so that it incorporates these
  changes.
- To do so, you need to select (stage) the changed files you wish to update
- into a bundle of changes that you will then approve (commit) and upload
- (push) to the online repository.
+ To do so, you need to select (
+\emph on
+stage
+\emph default
+) the changed files you wish to update into a bundle of changes that you
+ will then approve (
+\emph on
+commit
+\emph default
+) and upload (
+\emph on
+push
+\emph default
+) to the online repository.
  Let's start by staging the files to the commit.
  With the second command below you can check if the changes were added to
  the commit.
@@ -1147,21 +1190,28 @@ Remember the big picture: you are interested in Dropbox because it allows
 \series bold
 macro_indicators.csv
 \series default
-.
- A collaborator uploaded this file to 
+, which is inside 
 \series bold
 my-hello-world-econ-shared
 \series default
-, the project's shared Dropbox folder you copied in Exercise #0.
+.
 \end_layout
 
 \begin_layout Enumerate
 As always, you must start by updating your local repository to download
- (pull) any changes (commits) made to the online repository.
- You will check that you're standing on the 'master' branch.
+ (
+\emph on
+pull
+\emph default
+) any changes (
+\emph on
+commits
+\emph default
+) made to the online repository.
+ You will check that you are standing on the 'master' branch.
  If you're not, the third line of code below will take you to that branch.
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Later on we will talk about branches and how sometimes it ! See 
@@ -1458,7 +1508,7 @@ In Exercise #2 you created symbolic links to connect your project to the
  In this exercise, you will run a Python script that creates symbolic links
  for each of your project's data folders to connect them to their Dropbox
  counterparts.
- The Python script won't create a symbolic link for the
+ The Python script does not create a symbolic link for the
 \series bold
  finaldata 
 \series default
@@ -1473,7 +1523,6 @@ Go to your project's data folder and delete all the symbolic links you created
 \begin_layout Enumerate
 Open a terminal window, go to your project and run the Python script input_slink
 s.py with the arguments below.
- The first argument is the path to your po
 \begin_inset listings
 lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
@@ -1647,12 +1696,20 @@ begin{landscape}
 
 \begin_layout Section
 Big Picture
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Big-Picture"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \begin_inset Graphics
 	filename input/Hello-world-econ.pdf
-	scale 80
+	display false
+	scale 70
 
 \end_inset
 
@@ -1674,6 +1731,13 @@ end{landscape}
 
 \begin_layout Section
 Windows installation screenshots
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Windows-installation-screenshots"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1681,7 +1745,7 @@ Windows installation screenshots
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
