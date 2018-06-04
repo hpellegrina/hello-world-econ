@@ -208,15 +208,15 @@ conflict
  copies.
  This happens when Dropbox is not sure which version it should use because
  there is more than one synchronization happening at the same time.
- As I explain below, GitHub tends to avoid this problem because files are
+ As we explain below, GitHub tends to avoid this problem because files are
  not automatically synchronized.
- Second, Dropbox lacks a more sophisticated system to track what changes
- in each version of a code.
+ Second, Dropbox does not have a complete system to track what changes in
+ each version of a code.
  If something changes, we do not know who changed a code and what exactly
  they changed in it.
  GitHub has an interface that makes it easy to identify these changes.
- Third, if you want to bring back previous versions of a project, GitHub
- can do it quickly, but with Dropbox, we can only bring back specific files
+ Third, if we want to restore previous versions of a project, GitHub can
+ do it quickly, but with Dropbox, we can only bring back specific files
  one at a time.
  While some of these problems may be more likely to appear in large projects
  (imagine writing the codes for facebook for example...), as large empirical
@@ -261,7 +261,7 @@ y synchronized with the Master Repository and across all the Local Repositories
  of other researchers working on the project.
  Therefore, if someone makes a mistake, this mistake spreads across the
  project and there is no straighforward way of identifying this mistake
- and going back to previous versions of the project.
+ and restoring previous versions of the project.
  Now, with Git, we have an intermediary step
 \end_layout
 
@@ -297,7 +297,7 @@ clone
 \begin_inset Quotes eld
 \end_inset
 
-Pull
+pull
 \begin_inset Quotes erd
 \end_inset
 
@@ -312,6 +312,18 @@ Pull
 \begin_inset Quotes eld
 \end_inset
 
+stage
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\emph default
+or
+\emph on
+ 
+\begin_inset Quotes eld
+\end_inset
+
 add
 \begin_inset Quotes erd
 \end_inset
@@ -319,11 +331,15 @@ add
 
 \emph default
 .
- Once you added everything that you want, you use a process called 
+ Once you added everything, you use a process called 
 \begin_inset Quotes eld
 \end_inset
 
+
+\emph on
 commit
+\emph default
+
 \begin_inset Quotes erd
 \end_inset
 
@@ -346,32 +362,16 @@ adds
 
 
 \emph on
-Push
+push
 \emph default
 
 \begin_inset Quotes erd
 \end_inset
 
 .
- GitHub keeps track of all the versions of the project.
+ GitHub keeps track of all the versions of the project for every commit.
  If someone makes a mistake, we can easily go back to the version of the
  project that existed before the mistake.
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-See the Big Picture in the Appendix 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Big-Picture"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- to get a sense of how this will work!
 \end_layout
 
 \begin_layout Subsection
@@ -382,13 +382,90 @@ Can I use GitHub as a repository for my datasets?
 GitHub is a tool for keeping track of codes, but it is not supposed to be
  a repository for datasets.
  This is where an integration of Dropbox with Github is useful.
- GitHub can keep track of the codes of a project, and we can leave the datasets
- and output of the project (figures, tables and pdfs) untracked.
+ GitHub can keep track of the codes of a project and light files (figures,
+ tables and pdfs), and we can leave the datasets untracked.
  For example, a researcher can keep track of do-files that clean the data,
  but only keep the final version of the cleaned dataset.
- The idea is that, by keeping track of the code, we can always go back to
- previous versions of the project and re-obtain previous versions of the
- cleaned dataset.
+ By keeping track of the code, we can always go back to previous versions
+ of the project and re-obtain previous versions of the cleaned dataset.
+\end_layout
+
+\begin_layout Subsection
+How we integrate Dropbox with GitHub?
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:How-we-integrate"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We integrate Dropbox with GitHub as follows.
+ For each project, we create a main folder that is tracked by GitHub.
+ Within this tracked folder, we create subfolders that are connected to
+ external folders in Dropbox where datasets reside.
+ We establish this connection by creating 
+\begin_inset Quotes eld
+\end_inset
+
+symbolic links
+\begin_inset Quotes erd
+\end_inset
+
+, which is basically a shortcut for a folder.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+See this 
+\begin_inset CommandInset href
+LatexCommand href
+name "link"
+target "https://github.com/git-for-windows/git/wiki/Symbolic-Links"
+literal "false"
+
+\end_inset
+
+ for a helpful review of symbolic links.
+ 
+\end_layout
+
+\end_inset
+
+ As such, GitHub keeps track of the main folder and all the 
+\begin_inset Quotes eld
+\end_inset
+
+shortcut
+\begin_inset Quotes erd
+\end_inset
+
+ folders, but since datasets are in an external folder, it does not keep
+ track of the datasets.
+ See the picture in Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Big-Picture"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ for a illustration of this organization.
+ Using this system, when we write our codes in Stata and any other program,
+ we can reference to the 
+\begin_inset Quotes eld
+\end_inset
+
+shortcut
+\begin_inset Quotes erd
+\end_inset
+
+ folder to open external datasets.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -429,13 +506,13 @@ literal "false"
 ).
 \end_layout
 
-\begin_layout Subsubsection*
-Installing Git on Windows
+\begin_layout Subsubsection
+For Windows Users - Installing Git and using Git BASH
 \end_layout
 
 \begin_layout Standard
-After downloading the installation file, execute the installer and leave
- the default options in every step 
+After downloading the installation file for Git, execute the installer and
+ leave the default options in every step 
 \series bold
 except the last one.
  
@@ -460,6 +537,26 @@ noprefix "false"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+After installing Git, if you use Windows, you can use a software called
+ Git BASH to work with the same commands that you would use if you had a
+ Mac.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+You may see references to *NIX on the internet.
+ This is a reference to operating systems that are based on UNIX.
+\end_layout
+
+\end_inset
+
+ When this manual asks you to use 'the terminal', you should use Git BASH
+ if you have Windows.
+ There will be warnings when different commands are needed if working on
+ a Windows machine.
 \end_layout
 
 \begin_layout Section
@@ -497,30 +594,6 @@ google
  you need to have a basic understanding of the language that they use.
  Second, there are some functionalities that we were not able to obtain
  with the graphical interface.
-\end_layout
-
-\begin_layout Subsubsection*
-Terminal use if you use Windows
-\end_layout
-
-\begin_layout Standard
-After installing Git with the options mentioned above, if you use Windows,
- you can use a software called Git BASH to work with the same commands that
- you would use if you had a Mac.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-You may see references to *NIX on the internet.
- This is a reference to operating systems that are based on UNIX.
-\end_layout
-
-\end_inset
-
- When this manual asks you to use 'the terminal', you should use Git BASH
- if you have Windows.
- There will be warnings when different commands are needed if working on
- a Windows machine.
 \end_layout
 
 \begin_layout Subsection
@@ -933,7 +1006,7 @@ Remember the big picture: you are interested in GitHub because you want
 \series default
 Specifically, you will (1) create a remote repository of your project in
  GitHub, (2) configure git so that that it ignores *.dta Stata files, (3)
- set up a local repository to work on your project, and (3) learn how to
+ set up a local repository to work on your project, and (4) learn how to
  upload local changes to the online repository.
  
 \end_layout
@@ -1014,7 +1087,7 @@ status open
 
 \begin_layout Enumerate
 Open a terminal window and use the following commands to create a local
- copy of your repository.
+ copy of your repository creaated in the step above.
  This will create a folder called 
 \series bold
 my-hello-world-econ
@@ -1082,6 +1155,10 @@ my-hello-world-econ
 \emph on
 stage
 \emph default
+ or 
+\emph on
+add
+\emph default
 ) the changed files you wish to update into a bundle of changes that you
  will then approve (
 \emph on
@@ -1093,8 +1170,8 @@ push
 \emph default
 ) to the online repository.
  Let's start by staging the files to the commit.
- With the second command below you can check if the changes were added to
- the commit.
+ The second command below checks if the changes were properly added to the
+ commit.
  
 \begin_inset listings
 lstparams "basicstyle={\scriptsize\ttfamily}"
@@ -1117,8 +1194,7 @@ $ git status
 \end_layout
 
 \begin_layout Enumerate
-Now, create a commit and add a comment that explains what changes are being
- made.
+Create a commit and add a comment that explains the changes are being made.
 \begin_inset listings
 lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
@@ -1144,7 +1220,7 @@ Copied the contents of my-hello-world-econ-contents
 
 \begin_layout Enumerate
 Push the commit to the online repository.
- You will be asked to input your GitHub credentials at this point.
+ You may be asked to input your GitHub credentials.
  
 \begin_inset listings
 lstparams "basicstyle={\scriptsize\ttfamily}"
@@ -1179,13 +1255,18 @@ Exercise # 2 - Using Dropbox to access data inputs.
 \end_layout
 
 \begin_layout Standard
-Remember the big picture: you are interested in Dropbox because it allows
- you to share files with collaborators in one place.
- You're not interested in the history of these files because they are either
- static (e.g.
- raw data, documentation, related papers) or they can be replicated by running
- the code that produced them in the first place (e.g.
- output tables from a do-file or pdf files from latex code).
+Now, we are going to set up the folders that are connected to Dropbox using
+ symbolic links as explained in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:How-we-integrate"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
  In this exercise, you will work with your first data input: 
 \series bold
 macro_indicators.csv
@@ -1207,14 +1288,12 @@ pull
 \emph on
 commits
 \emph default
-) made to the online repository.
- You will check that you are standing on the 'master' branch.
- If you're not, the third line of code below will take you to that branch.
+) made to the online repository by your collaborators.
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
-Later on we will talk about branches and how sometimes it ! See 
+See 
 \begin_inset CommandInset href
 LatexCommand href
 name "this"
@@ -1251,7 +1330,8 @@ $ git pull
 \end_layout
 
 \begin_layout Enumerate
-You will now 'connect' to the data input.
+You will now create a folder for the data input that will be connected to
+ an external folder.
  Go to the folder 
 \series bold
 population
@@ -1260,28 +1340,7 @@ population
 \series bold
 input
 \series default
-.
- This link must point to the folder in 
-\series bold
-my-hello-world-econ-shared
-\series default
- that contains the file 
-\series bold
-macro_indicators.csv.
- 
-\series default
-If you are using MacOS or *NIX, use the following commands in the terminal.
- See this 
-\begin_inset CommandInset href
-LatexCommand href
-name "link"
-target "https://github.com/git-for-windows/git/wiki/Symbolic-Links"
-literal "false"
-
-\end_inset
-
- for a helpful review of symbolic links.
- 
+ using the following commands.
 \begin_inset listings
 lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
@@ -1420,8 +1479,11 @@ analysis
 
 \begin_layout Enumerate
 The codes you edited and ran produced new files.
- You will now upload (push) the changes you have made to your project to
- the online repository.
+ You will now upload (
+\emph on
+push
+\emph default
+) the changes you have made to your project to the online repository.
  Remember that we configured git to ignore *.dta files, so the files 
 \series bold
 population.dta
@@ -1496,7 +1558,7 @@ You have made your first contribution to my-hello-world-econ! Make sure
 \end_layout
 
 \begin_layout Subsection
-Exercise # 3 - A shorter way to create multiple symbolic links.
+(EXTRA) Exercise # 3 - A shorter way to create multiple symbolic links.
 \end_layout
 
 \begin_layout Standard
