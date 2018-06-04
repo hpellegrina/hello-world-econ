@@ -867,12 +867,11 @@ Issue #1: added table_1_summary_stat.do
 \end_layout
 
 \begin_layout Itemize
-You work on other tasks and make further commits for each (steps 3 and 4
- above).
+You work on other tasks and make additional commits (steps 3 and 4 above).
 \end_layout
 
 \begin_layout Itemize
-You upload all the commits you have made to the online repository.
+You upload all the commits to the online repository.
 \begin_inset listings
 lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
@@ -991,11 +990,8 @@ Exercise #1 - Using GitHub to track codes.
 \end_layout
 
 \begin_layout Standard
-Remember the big picture: you are interested in GitHub because you want
- to track the changes made to your project's codes and light files such
- as output tables and graphs.
- In this exercise, you will use GitHub to track the codes and graphs of
- a new project:
+In this exercise, you will use GitHub to track the codes and graphs of a
+ new project:
 \series bold
  my-hello-world-econ
 \series default
@@ -1004,10 +1000,10 @@ Remember the big picture: you are interested in GitHub because you want
 \series bold
  
 \series default
-Specifically, you will (1) create a remote repository of your project in
- GitHub, (2) configure git so that that it ignores *.dta Stata files, (3)
- set up a local repository to work on your project, and (4) learn how to
- upload local changes to the online repository.
+You will (1) create a remote repository of your project in GitHub, (2) configure
+ git so that that it ignores *.dta Stata files, (3) set up a local repository
+ to work on your project, and (4) upload the local changes to the online
+ repository.
  
 \end_layout
 
@@ -1021,21 +1017,35 @@ literal "false"
 
 \end_inset
 
- and create a repository called 
+.
+ Create a repository called 
 \series bold
-my-hello-world-econ.
+my-hello-world-econ 
+\series default
+and click on 
+\begin_inset Quotes eld
+\end_inset
+
+initialize this repository with a README
+\begin_inset Quotes erd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Enumerate
-Click on 'Create new file' to create a file called 
+In the website of your repository, click on 'Create new file' to create
+ a file called 
 \series bold
 .gitignore 
 \series default
-with the content below.
- Note that (1) this file should be in the main folder of your project, (2)
- the dot at the beginning of the name should be included, and (3) lines
- that start with '#' are comments.
- After creating the file, click on 'Commit changes to the master branch'.
+in the main folder of the project
+\series bold
+.
+
+\series default
+ Input the content below in this file and click on 'Commit changes to the
+ master branch'.
 \begin_inset Foot
 status collapsed
 
@@ -1087,7 +1097,7 @@ status open
 
 \begin_layout Enumerate
 Open a terminal window and use the following commands to create a local
- copy of your repository creaated in the step above.
+ copy of the repository created in the step above.
  This will create a folder called 
 \series bold
 my-hello-world-econ
@@ -1149,30 +1159,17 @@ The files you just added to
 my-hello-world-econ
 \series default
  are local changes you made to the project.
- You will now update your online repository so that it incorporates these
+ We will now update your online repository so that it incorporates these
  changes.
- To do so, you need to select (
-\emph on
-stage
-\emph default
- or 
-\emph on
-add
-\emph default
-) the changed files you wish to update into a bundle of changes that you
- will then approve (
-\emph on
+ First, let's add the changes to the 
+\begin_inset Quotes eld
+\end_inset
+
 commit
-\emph default
-) and upload (
-\emph on
-push
-\emph default
-) to the online repository.
- Let's start by staging the files to the commit.
- The second command below checks if the changes were properly added to the
- commit.
- 
+\begin_inset Quotes erd
+\end_inset
+
+ stage (the second command below checks if the changes were properly added).
 \begin_inset listings
 lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
@@ -1194,7 +1191,7 @@ $ git status
 \end_layout
 
 \begin_layout Enumerate
-Create a commit and add a comment that explains the changes are being made.
+Create a commit and add a comment that explain what you are uploading.
 \begin_inset listings
 lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
@@ -1220,7 +1217,6 @@ Copied the contents of my-hello-world-econ-contents
 
 \begin_layout Enumerate
 Push the commit to the online repository.
- You may be asked to input your GitHub credentials.
  
 \begin_inset listings
 lstparams "basicstyle={\scriptsize\ttfamily}"
@@ -1267,15 +1263,8 @@ noprefix "false"
 \end_inset
 
 .
- In this exercise, you will work with your first data input: 
-\series bold
-macro_indicators.csv
-\series default
-, which is inside 
-\series bold
-my-hello-world-econ-shared
-\series default
-.
+ We will (1) clean a dataset, (2) generate a figure and (3) upload your
+ changes to the online repository.
 \end_layout
 
 \begin_layout Enumerate
@@ -1334,7 +1323,7 @@ You will now create a folder for the data input that will be connected to
  an external folder.
  Go to the folder 
 \series bold
-population
+data
 \series default
  in your project's data folder and create a symbolic link called 
 \series bold
@@ -1348,12 +1337,12 @@ status open
 
 \begin_layout Plain Layout
 
-$ cd your/path/to/my-hello-world-econ/data/macro
+$ cd your/path/to/my-hello-world-econ/data/
 \end_layout
 
 \begin_layout Plain Layout
 
-$ ln -s your/path/to/Dropbox/my-hello-world-econ-shared/data/population/input
+$ ln -s your/path/to/Dropbox/my-hello-world-econ-shared/data/input input
 \end_layout
 
 \end_inset
@@ -1381,7 +1370,7 @@ my-hello-world-econ
 \backslash
 data
 \backslash
-population
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -1398,8 +1387,6 @@ my-hello-world-econ-shared
 \backslash
 data
 \backslash
-population
-\backslash
 input
 \end_layout
 
@@ -1409,94 +1396,46 @@ input
 \end_layout
 
 \begin_layout Enumerate
-Repeat the last step for the 
+Open the file 
 \series bold
-agriculture 
+make_urbanpop_dta.do
 \series default
-folder.
+.
+ Edit the path in the third line so that it points to its folder, that is,
+ to 
+\series bold
+my-hello-world-econ/data/code
+\series default
+.
+ Save and run the do-file.
+ This step creates a cleaned dataset called 
+\series bold
+finaldata.dta
+\series default
+.
 \end_layout
 
 \begin_layout Enumerate
 Open the file 
 \series bold
-import_population.do 
-\series default
-and edit the path in the third line so that it points to its folder, that
- is, to 
-\series bold
-my-hello-world-econ/data/population/code
+fig_va_urbanization.do
 \series default
 .
+ Edit the path in the third line so that it points to its folder.
  Save and run the do-file.
-\begin_inset listings
-lstparams "basicstyle={\scriptsize\ttfamily}"
-inline false
-status open
-
-\begin_layout Plain Layout
-
-1.
- clear all
-\end_layout
-
-\begin_layout Plain Layout
-
-2.
- * Write down the directory below
-\end_layout
-
-\begin_layout Plain Layout
-
-3.
- cd "your/path/to/my-hello-world-econ/data/population/code"
-\end_layout
-
-\end_inset
-
-
+ This step creates a figures called 
+\series bold
+fig_hello_world.png
+\series default
+.
 \end_layout
 
 \begin_layout Enumerate
-Repeat the last step for the files 
-\series bold
-import_agricultural_output.do
-\series default
-, 
-\series bold
-make_data_for_analysis.do
-\series default
- and 
-\series bold
-fig_va_urbanization.do 
-\series default
-(in that order).
- You can find the last one in the 
-\series bold
-analysis
-\series default
- folder.
-\end_layout
-
-\begin_layout Enumerate
-The codes you edited and ran produced new files.
- You will now upload (
+You will now upload (
 \emph on
 push
 \emph default
 ) the changes you have made to your project to the online repository.
- Remember that we configured git to ignore *.dta files, so the files 
-\series bold
-population.dta
-\series default
-, 
-\series bold
-agricultural_output.dta 
-\series default
-and 
-\series bold
-data_for_analysis.dta
-\series default
- should not be uploaded to the online repository.
 \begin_inset listings
 lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
@@ -1509,16 +1448,11 @@ $ git add -A
 
 \begin_layout Plain Layout
 
-$ git status
-\end_layout
-
-\begin_layout Plain Layout
-
 $ git commit -m 
 \begin_inset Quotes eld
 \end_inset
 
-Changed do-files
+Done with my first analysis!
 \begin_inset Quotes erd
 \end_inset
 
@@ -1550,41 +1484,44 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-You have made your first contribution to my-hello-world-econ! Make sure
- you understand what each of the do-files are doing and how their relative
- paths work.
- The number of folders may seem excessive at first, but as a project grows
- you will find it helpful.
+You have made your first contribution to my-hello-world-econ! Note that
+ all the files in the external folder are not tracked by GitHub.
+ Also, because we configured git to ignore *.dta files, 
+\series bold
+finaldata.dta
+\series default
+ is not uploaded to the online repository.
+ 
 \end_layout
 
 \begin_layout Subsection
-(EXTRA) Exercise # 3 - A shorter way to create multiple symbolic links.
+(EXTRA) Using Python to create symbolic links.
 \end_layout
 
 \begin_layout Standard
 In Exercise #2 you created symbolic links to connect your project to the
  the data inputs shared by collaborators on Dropbox.
- As a project gets bigger, however, it may be tedious to create a large
+ In projects with several datasets, it may be tedious to create a large
  number of symbolic links in the terminal when cloning a repository for
  the first time.
- In this exercise, you will run a Python script that creates symbolic links
- for each of your project's data folders to connect them to their Dropbox
- counterparts.
- The Python script does not create a symbolic link for the
-\series bold
- finaldata 
-\series default
-folder.
+ We provide a Python script that check all the data sources inside a major
+ data folder and create symbolic links to each of them.
+ This code works with the organization of folders presented in Appendix
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Big-Picture"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ To run this code, open the terminal and type the commands below.
 \end_layout
 
-\begin_layout Enumerate
-Go to your project's data folder and delete all the symbolic links you created
- in Exercise #2.
-\end_layout
-
-\begin_layout Enumerate
-Open a terminal window, go to your project and run the Python script input_slink
-s.py with the arguments below.
+\begin_layout Standard
 \begin_inset listings
 lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
@@ -1601,7 +1538,7 @@ $ python3 input_slinks.py
 \begin_inset Quotes eld
 \end_inset
 
-your/path/to/my-hello-world-econ
+your/path/to/project
 \begin_inset Quotes erd
 \end_inset
 
@@ -1609,7 +1546,7 @@ your/path/to/my-hello-world-econ
 \begin_inset Quotes eld
 \end_inset
 
-your/path/to/Dropbox/my-hello-world-econ-shared
+your/path/to/project-data
 \begin_inset Quotes erd
 \end_inset
 
@@ -1619,11 +1556,6 @@ your/path/to/Dropbox/my-hello-world-econ-shared
 \end_inset
 
 
-\end_layout
-
-\begin_layout Enumerate
-Review the files and upload the changes to the online repository (see Step
- 6 in Exercise #2).
 \end_layout
 
 \begin_layout Section
