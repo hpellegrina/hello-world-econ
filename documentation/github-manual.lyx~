@@ -121,7 +121,7 @@ theorems-std
 \begin_layout Title
 A Brief Introduction to GitHub for Social Scientists using Stata and Dropbox
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 The purpose of this material is to serve just as an introduction to Github.
@@ -139,7 +139,7 @@ literal "false"
 \end_inset
 
 .
- I thank Yaw Nyarko and Martin Smith for comments.
+ We thank Yaw Nyarko and Martin Smit for comments.
  Contact: heitor.pellegrina@nyu.edu or andres.fajardo@nyu.edu.
 \end_layout
 
@@ -163,7 +163,8 @@ and
 
 \end_inset
 
- Andres Fajardo
+ Andres F.
+ Fajardo
 \end_layout
 
 \begin_layout Section
@@ -173,16 +174,18 @@ Introduction
 \begin_layout Standard
 GitHub is a widely used online platform that computer scientists use to
  keep track of their codes and to collaborate on their projects.
- The word GitHub is the combination of Git with Hub.
- Git is a version control system that stores all the history of a code.
- With Git, programmers can check what they changed in their codes and when
- they changed their codes.
- They can also restore previous versions of their projects if they do not
- like their new versions.
- GitHub is a web-based repository that keeps all the history of a code on
- a cloud using the Git system.
- Since everything is in a cloud, it allows many researchers to colaborate
- on a specific project.
+ The word GitHub is the combination of Git and Hub.
+ Git is a version control system that stores all the previous versions of
+ files within a project.
+ With Git, programmers can check what has changed in their codes and when
+ those changes took place.
+ They also have the ability to restore previous versions of their projects
+ when they see fit.
+ GitHub is a web-based repository that uses the Git system to save the complete
+ history of a project in the cloud.
+ Since everything is in the cloud, researches can collaborate on specific
+ projects by sharing the changes they make on their local machines via the
+ online repository.
 \end_layout
 
 \begin_layout Subsection
@@ -197,7 +200,7 @@ ly synchronized across computers.
  However, as projects expand in terms of size and collaborators, one may
  run into problems.
  First, if you have used Dropbox to work with many collaborators you probably
- noticed the generation of 
+ noticed the creation of 
 \begin_inset Quotes eld
 \end_inset
 
@@ -210,8 +213,8 @@ conflict
  there is more than one synchronization happening at the same time.
  As we explain below, GitHub tends to avoid this problem because files are
  not automatically synchronized.
- Second, Dropbox does not have a complete system to track what changes in
- each version of a code.
+ Second, Dropbox does not have a complete system to track the specific changes
+ that are made across versions of a code.
  If something changes, we do not know who changed a code and what exactly
  they changed in it.
  GitHub has an interface that makes it easy to identify these changes.
@@ -219,12 +222,12 @@ conflict
  do it quickly, but with Dropbox, we can only bring back specific files
  one at a time.
  While some of these problems may be more likely to appear in large projects
- (imagine writing the codes for facebook for example...), as large empirical
+ (imagine writing the codes for facebook, for example), as large empirical
  projects become more frequent in Economics, we believe that the use of
  GitHub will inevitably become more frequent as well.
  The main cost of using GitHub is that you have to be much more systematic
- about the way how you work since you have to manually synchronize your
- changes with the cloud.
+ with your work, since you have to manually synchronize your changes with
+ the cloud.
 \end_layout
 
 \begin_layout Subsection
@@ -254,28 +257,29 @@ commit
 
 \end_inset
 
-where Master Repository is the cloud where the codes are and local repository
- is a copy of the Master Repository that you keep in your computer.
- If someone changes something in their Local Repository, things are automaticall
-y synchronized with the Master Repository and across all the Local Repositories
- of other researchers working on the project.
- Therefore, if someone makes a mistake, this mistake spreads across the
- project and there is no straighforward way of identifying this mistake
- and restoring previous versions of the project.
- Now, with Git, we have an intermediary step
+where Master Repository is the main copy of a project that is stored in
+ the cloud and Local Repository is a copy of the Master Repository that
+ you keep in your computer.
+ Changes made by a collaborator on their local repository are automatically
+ synchronized with the Master Repository and, in turn, with all collaborators'
+ local repositories.
+ Therefore, a single mistake by one collaborator can spread across all local
+ repositories, and Dropbox lacks the capabilities to identify when exactly
+ things went astray or to restore to a past working version of the project
+ with ease.
+ With Git, we have an intermediary step called commit:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\text{Master Repo (on the web)}\iff\text{Commit}\iff\text{Local Repo (in your computer)},
+\text{Master Repo (on the web)}\iff\text{Commit}\iff\text{Local Repo (in your computer)}
 \]
 
 \end_inset
 
 The way how synchronization works with Github is as follows.
- You first download all the repository that cointains the codes for the
- project to your computer.
+ You first download the Master repository to your local machine.
  If it is the first time that you are downloading a project, you use a process
  called 
 \emph on
@@ -304,9 +308,10 @@ pull
 
 \emph default
 .
- Both are essentially downloading the files from the cloud.
- After you make your changes to the files, you can then upload them to this
- intermediary step called commit using a process called
+ Both processes will download the up-to-date version of the project to your
+ computer.
+ After you make changes to the files, you can then load them to this intermediar
+y step called commit using a process called
 \emph on
  
 \begin_inset Quotes eld
@@ -355,7 +360,15 @@ adds
 \begin_inset Quotes erd
 \end_inset
 
- that you made.
+ that you made into a bundle of 
+\begin_inset Quotes eld
+\end_inset
+
+approved changes
+\begin_inset Quotes erd
+\end_inset
+
+.
  You can upload this commit to the cloud using a process called 
 \begin_inset Quotes eld
 \end_inset
@@ -371,7 +384,8 @@ push
 .
  GitHub keeps track of all the versions of the project for every commit.
  If someone makes a mistake, we can easily go back to the version of the
- project that existed before the mistake.
+ project that existed before the commit that uploaded the mistake to the
+ Master Repository.
 \end_layout
 
 \begin_layout Subsection
@@ -379,19 +393,15 @@ Can I use GitHub as a repository for my datasets?
 \end_layout
 
 \begin_layout Standard
-GitHub is a tool for keeping track of codes, but it is not supposed to be
+GitHub is a tool for keeping track of codes, and it is not supposed to be
  a repository for datasets.
- This is where an integration of Dropbox with Github is useful.
+ This is why integrating Dropbox with Github is useful.
  GitHub can keep track of the codes of a project and light files (figures,
- tables and pdfs), and we can leave the datasets untracked.
- For example, a researcher can keep track of do-files that clean the data,
- but only keep the final version of the cleaned dataset.
- By keeping track of the code, we can always go back to previous versions
- of the project and re-obtain previous versions of the cleaned dataset.
+ tables and pdfs), and collaborators can share large data files using Dropbox.
 \end_layout
 
 \begin_layout Subsection
-How we integrate Dropbox with GitHub?
+How do we integrate Dropbox with GitHub in a local machine?
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:How-we-integrate"
@@ -402,21 +412,15 @@ name "subsec:How-we-integrate"
 \end_layout
 
 \begin_layout Standard
-We integrate Dropbox with GitHub as follows.
- For each project, we create a main folder that is tracked by GitHub.
+We integrate Dropbox with GitHub in a local machine as follows.
+ For each project, we create a main folder that is tracked by GitHub, and
+ which is a copy of the Master Repository online.
  Within this tracked folder, we create subfolders that are connected to
- external folders in Dropbox where datasets reside.
- We establish this connection by creating 
-\begin_inset Quotes eld
-\end_inset
-
-symbolic links
-\begin_inset Quotes erd
-\end_inset
-
-, which is basically a shortcut for a folder.
+ external folders in the local machine that are synchronized with Dropbox.
+ We establish this connection by creating symbolic links, which are basically
+ shortcuts to a folder.
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 See this 
@@ -434,16 +438,8 @@ literal "false"
 
 \end_inset
 
- As such, GitHub keeps track of the main folder and all the 
-\begin_inset Quotes eld
-\end_inset
-
-shortcut
-\begin_inset Quotes erd
-\end_inset
-
- folders, but since datasets are in an external folder, it does not keep
- track of the datasets.
+ Given that the symbolic links target folders that are external to the main
+ folder, GitHub will not keep track of the data files.
  See the picture in Appendix 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -512,21 +508,7 @@ For Windows Users - Installing Git and using Git BASH
 
 \begin_layout Standard
 After downloading the installation file for Git, execute the installer and
- leave the default options in every step 
-\series bold
-except the last one.
- 
-\series default
-At this point, check the option 
-\begin_inset Quotes eld
-\end_inset
-
-Enable symbolic links.
-\begin_inset Quotes erd
-\end_inset
-
- Screen shots of this manual's recommended installing options are available
- below in Appendix 
+ select the options as they appear in Appendix 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Windows-installation-screenshots"
@@ -540,9 +522,8 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-After installing Git, if you use Windows, you can use a software called
- Git BASH to work with the same commands that you would use if you had a
- Mac.
+If you use Windows, you can use a tool called Git BASH to work with the
+ same commands that you would use if you had a Mac.
 \begin_inset Foot
 status collapsed
 
@@ -575,23 +556,14 @@ point-and-click
 \end_inset
 
  your way through synchronization.
- Second, you can use the Terminal in Mac (or the command line in windows,
+ Second, you can use the Terminal in Mac (or the Command Prompt in Windows,
  see below).
  The Terminal may seem scary at first, but, in practice, you do not have
  to be a sophisticated programmer to use it.
  There are just a few commands that you use for your daily work.
  We see two benefits in learning how to type the commands in Terminal.
- First, whenever you have a question about a specific task and you 
-\begin_inset Quotes eld
-\end_inset
-
-google
-\begin_inset Quotes erd
-\end_inset
-
- your question, the answers that you get are mostly based on command lines.
- Therefore, to understand the answers that are given by the online community,
- you need to have a basic understanding of the language that they use.
+ First, whenever you have a question about how to use Git, the answers posted
+ online by other users will most likely involve using the Terminal.
  Second, there are some functionalities that we were not able to obtain
  with the graphical interface.
 \end_layout
@@ -1191,7 +1163,7 @@ $ git status
 \end_layout
 
 \begin_layout Enumerate
-Create a commit and add a comment that explain what you are uploading.
+Create a commit and add a comment that explains what you are uploading.
 \begin_inset listings
 lstparams "basicstyle={\scriptsize\ttfamily}"
 inline false
@@ -1504,7 +1476,7 @@ In Exercise #2 you created symbolic links to connect your project to the
  In projects with several datasets, it may be tedious to create a large
  number of symbolic links in the terminal when cloning a repository for
  the first time.
- We provide a Python script that check all the data sources inside a major
+ We provide a Python script that checks all the data sources inside a major
  data folder and create symbolic links to each of them.
  This code works with the organization of folders presented in Appendix
  
@@ -1560,33 +1532,6 @@ your/path/to/project-data
 
 \begin_layout Section
 Additional Features for Teamwork
-\end_layout
-
-\begin_layout Subsection
-Adding collaborators
-\end_layout
-
-\begin_layout Standard
-To add collaborators into your GitHub repository, you can just use the github.com
- website.
- 
-\end_layout
-
-\begin_layout Itemize
-Click on the repository of the project.
- 
-\end_layout
-
-\begin_layout Itemize
-Click on the settings of the repository (one of the tabs on the top).
-\end_layout
-
-\begin_layout Itemize
-Click on collaborators.
-\end_layout
-
-\begin_layout Itemize
-Type the email of you collaborator and add him/her there.
 \end_layout
 
 \begin_layout Subsection
