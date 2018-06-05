@@ -1563,33 +1563,6 @@ Additional Features for Teamwork
 \end_layout
 
 \begin_layout Subsection
-Adding collaborators
-\end_layout
-
-\begin_layout Standard
-To add collaborators into your GitHub repository, you can just use the github.com
- website.
- 
-\end_layout
-
-\begin_layout Itemize
-Click on the repository of the project.
- 
-\end_layout
-
-\begin_layout Itemize
-Click on the settings of the repository (one of the tabs on the top).
-\end_layout
-
-\begin_layout Itemize
-Click on collaborators.
-\end_layout
-
-\begin_layout Itemize
-Type the email of you collaborator and add him/her there.
-\end_layout
-
-\begin_layout Subsection
 Issues
 \end_layout
 
