@@ -18,8 +18,7 @@ sources = os.listdir(p_data)
 
 # Loop over elements in list
 for source in sources:
-    if not source == 'finaldata':
-        # Set input path
-        input = p_data + '/' + source + '/input'
-        # Call function
-        symlink_force(d_data + '/' + source + '/input', input)
+    # Set input path
+    input = p_data + '/' + source + '/input'
+    # Call function
+    symlink_force(d_data + '/' + source + '/input', input)
